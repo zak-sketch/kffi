@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingdom Faith Foundation International (KFFI)</title>
+  <!-- Tailwind via CDN (inline style requirement: all styling in classes, no external CSS except tailwind script) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- optional font (clean) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* minor custom for smooth scroll + font — inline-ish but necessary for consistency */
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-amber-200">
+
+  <!-- ============ TRUST BAR ============ -->
+  <div class="bg-stone-900 text-white text-xs sm:text-sm py-2 px-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-center">
+    <span class="font-semibold tracking-wide">🇰🇪 Since 2006</span>
+    <span class="hidden sm:inline text-stone-400">|</span>
+    <span><strong class="text-amber-300">176,800+</strong> Pastors Trained</span>
+    <span class="hidden sm:inline text-stone-400">|</span>
+    <span>20 Countries</span>
+    <span class="hidden sm:inline text-stone-400">|</span>
+    <span class="text-emerald-300 font-medium">100% Financial Transparency</span>
+  </div>
+
+  <!-- ============ HEADER / HERO SECTION ============ -->
+  <header class="relative bg-gradient-to-br from-stone-900 via-stone-800 to-stone-900 text-white">
+    <!-- subtle background overlay pattern (css only) -->
+    <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, #fbbf24 0, transparent 35%), radial-gradient(circle at 80% 70%, #f59e0b 0, transparent 30%);"></div>
+    
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24">
+      <div class="flex flex-col items-center text-center">
+        <span class="bg-amber-500/20 text-amber-200 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5">Kingdom Faith Foundation International</span>
+        <p class="text-lg sm:text-xl font-light text-stone-300 mb-2">Equipping Pastors · Caring for Orphans · Strengthening Local Churches</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mt-3 max-w-4xl">
+          One Foundation. <span class="text-amber-400">Three Callings.</span> One Mission for Africa.
+        </h1>
+        <p class="mt-5 max-w-2xl text-stone-300 text-base sm:text-lg leading-relaxed">
+          For nearly 20 years since 2006, KFFI has been discipling leaders, rescuing street children, and caring for orphans from our base in Kenya to 20 nations across the continent.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4 justify-center">
+          <a href="#donate" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-stone-900 font-bold py-3 px-6 rounded-lg shadow-lg transition-transform hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM8 16a2 2 0 004 0H8z"/></svg>
+            Equip a Pastor
+          </a>
+          <a href="#donate" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold py-3 px-6 rounded-lg backdrop-blur transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M13 10a3 3 0 11-6 0 3 3 0 016 0zm-3 5a5 5 0 100-10 5 5 0 000 10z" clip-rule="evenodd"/><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg>
+            Care for an Orphan
+          </a>
+        </div>
+        <p class="mt-6 text-xs text-stone-400">Founders: Rev. John Amos & Carol Butalia — Based in Kenya, Serving Africa</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ SEGMENT 2: THREE PILLARS ============ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-stone-900 mb-12">Who We Are</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- pillar 1 -->
+        <div class="bg-stone-50 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+          <div class="w-14 h-14 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422A12 12 0 0112 21a12 12 0 01-6.16-10.422L12 14z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-stone-900 mb-3">Equipping Pastors & Leaders</h3>
+          <p class="text-stone-600 leading-relaxed">We train and disciple pastors and church leaders across Africa with sound biblical teaching. Our network includes 16 instructor pastors and 378 volunteer coordinators serving in 20 nations.</p>
+        </div>
+        <!-- pillar 2 -->
+        <div class="bg-stone-50 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+          <div class="w-14 h-14 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87M16 3.13a4 4 0 010 7.75M10 3.13a4 4 0 000 7.75M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-stone-900 mb-3">Caring for Orphans</h3>
+          <p class="text-stone-600 leading-relaxed">Holistic care for orphans and vulnerable children through three programs: Rescued Children (full-time care), Rehabilitation of Street Children, and Vocational Training for youth.</p>
+        </div>
+        <!-- pillar 3 -->
+        <div class="bg-stone-50 rounded-2xl p-7 shadow-sm hover:shadow-md transition">
+          <div class="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-stone-900 mb-3">Rooted in Faith. Driven by Transparency.</h3>
+          <p class="text-stone-600 leading-relaxed">We are a faith-based nonprofit that believes transparency honors God and our donors. Every donation is tracked and reported monthly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGMENT 3: IMPACT & PASTORS TRAINING ============ -->
+  <section class="bg-stone-50 py-16">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-stone-900 mb-4">Our Impact Across Africa</h2>
+      <p class="text-center text-stone-500 max-w-2xl mx-auto mb-10">Over <span class="font-bold text-amber-700">176,800 Pastors and Church Leaders Trained</span> in 20 nations.</p>
+      
+      <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+        <p class="text-sm font-semibold text-stone-700 uppercase tracking-wider mb-3">Nations reached (20):</p>
+        <p class="text-stone-600 leading-relaxed text-sm md:text-base">Kenya, Uganda, Tanzania, Rwanda, Burundi, DR Congo, Zambia, Malawi, Zimbabwe, Botswana, Ghana, South Africa, Namibia, Lesotho, Eswatini, Mozambique, Liberia, Ivory Coast, Sierra Leone, and Chad (20th country).</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-4 text-center">
+        <div class="bg-white p-5 rounded-lg shadow-sm"><span class="block text-2xl font-extrabold text-stone-800">1</span> Hearing the Voice of God</div>
+        <div class="bg-white p-5 rounded-lg shadow-sm"><span class="block text-2xl font-extrabold text-stone-800">2</span> Walking in the Power of the Holy Spirit <span class="block text-xs text-stone-500">(Nine Manifestations)</span></div>
+        <div class="bg-white p-5 rounded-lg shadow-sm"><span class="block text-2xl font-extrabold text-stone-800">3</span> Succeeding in Spiritual Warfare</div>
+        <div class="bg-white p-5 rounded-lg shadow-sm"><span class="block text-2xl font-extrabold text-stone-800">4</span> The Coming of the Son of Man <span class="block text-xs text-stone-500">(Eschatology)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGMENT 4: FINANCIAL TRANSPARENCY ============ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-stone-900">100% Financial Transparency</h2>
+      <p class="mt-4 text-stone-600 text-lg">We believe God honors accountability. We provide monthly donor reports showing exactly how every gift is used.</p>
+      
+      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-7 mt-8 text-left">
+        <h3 class="font-bold text-lg text-stone-800 flex items-center gap-2"><span class="text-amber-600">📊</span> September 2026 Report (Example)</h3>
+        <p class="mt-3 text-stone-700 leading-relaxed">Our September 2026 investment of <strong>$10,893</strong> was dedicated primarily to education — covering University, College, and Regular School tuition for the children under our care. Monthly operational costs for rescue care, food, housing, and pastoral support are tracked separately and available on request.</p>
+        <div class="mt-5">
+          <a href="#" class="inline-flex items-center gap-2 bg-stone-900 text-white font-semibold px-5 py-2.5 rounded-md hover:bg-stone-700 transition text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Full Financial Report (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGMENT 5: TRAINING TEAM & SUPPORT ============ -->
+  <section class="bg-stone-900 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Training Team</h2>
+      <div class="grid md:grid-cols-2 gap-8 items-start">
+        <div>
+          <div class="bg-stone-800 p-6 rounded-2xl">
+            <p class="text-4xl font-extrabold text-amber-400">16</p>
+            <p class="font-semibold text-lg mt-1">Instructor Pastors</p>
+            <p class="text-stone-300 text-sm mt-2">from different countries in Africa — core faculty sent to equip pastors.</p>
+          </div>
+          <div class="bg-stone-800 p-6 rounded-2xl mt-4">
+            <p class="text-4xl font-extrabold text-amber-400">378</p>
+            <p class="font-semibold text-lg mt-1">Volunteer Coordinators</p>
+            <p class="text-stone-300 text-sm mt-2">active pastors serving across Africa who voluntarily mobilize and coordinate trainings.</p>
+          </div>
+        </div>
+        <div class="space-y-5 text-stone-300 leading-relaxed">
+          <p><span class="text-white font-semibold">How Training is Supported:</span> Instructors travel extensively to reach remote towns. We facilitate transportation & boarding — costs vary by location.</p>
+          <p><span class="text-white font-semibold">Coordinators & Volunteers:</span> serve sacrificially without pay, though donations to encourage their work are deeply appreciated.</p>
+          <p><span class="text-white font-semibold">Accountability:</span> For security, we do not publish individual profiles or costs online. For all details, support, sponsorship, or to facilitate a training, contact us directly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SEGMENT 6A: HOME CHURCH LCF KITENGELA ============ -->
+  <section class="py-16 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h3 class="text-2xl font-bold text-stone-900 mb-2">Love of Calvary Fellowship Kitengela (LCF-Kitengela)</h3>
+        <p class="text-stone-600 mb-5">Home church & spiritual base for all KFFI operations. Located in Kitengela, a growing suburb of Nairobi, LCF ministers hope and preaches the love of Calvary to families.</p>
+        <div class="bg-stone-50 p-5 rounded-xl">
+          <p class="font-semibold text-lg">🕊️ Sunday Services: 10:00 AM – 12:30 PM</p>
+          <ul class="mt-2 text-stone-700 space-y-1 list-disc pl-5">
+            <li>New Believers Bible Study</li>
+            <li>Children Service</li>
+            <li>Main Service for All</li>
+          </ul>
+          <p class="mt-4 text-sm text-stone-500">Church Email: <a href="mailto:loveofcalvary2@gmail.com" class="text-blue-700 underline">loveofcalvary2@gmail.com</a></p>
+        </div>
+      </div>
+      <!-- Donation options preview (id donate) -->
+      <div id="donate" class="scroll-mt-28">
+        <h3 class="text-2xl font-bold text-stone-900 mb-2">Your Gift Transforms Lives</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 bg-amber-50 p-4 rounded-xl border border-amber-100"><span class="text-2xl">🎓</span> <strong>EQUIP A PASTOR</strong> — Facilitate instructor training</div>
+          <div class="flex items-center gap-3 bg-sky-50 p-4 rounded-xl border border-sky-100"><span class="text-2xl">📚</span> <strong>EDUCATE A CHILD</strong> — Tuition for School, College, University</div>
+          <div class="flex items-center gap-3 bg-rose-50 p-4 rounded-xl border border-rose-100"><span class="text-2xl">🏠</span> <strong>RESCUE & RESTORE</strong> — Food, Housing & Rehabilitation of Street Children</div>
+        </div>
+        <p class="text-xs text-stone-400 mt-3">Bank details provided only upon direct inquiry via WhatsApp or Email (security & accountability).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ OFFICIAL CONTACT ============ -->
+  <section class="bg-stone-100 py-14">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold text-stone-900">Official Contact for ALL Inquiries</h2>
+      <p class="text-sm text-stone-500">(KFFI & LCF & Giving)</p>
+      <div class="mt-6 bg-white p-6 rounded-2xl shadow-sm inline-block text-left">
+        <p class="text-lg font-bold text-stone-800">Rev. John Amos Butalia</p>
+        <p class="flex items-center gap-2 mt-2"><span class="text-emerald-600">WhatsApp:</span> <a href="https://wa.me/254723781353" class="text-blue-700 font-medium">+254 723 781 353</a></p>
+        <p class="flex items-center gap-2"><span class="text-stone-600">📧</span> <a href="mailto:kingdomfaithafrica@gmail.com" class="text-blue-700">kingdomfaithafrica@gmail.com</a></p>
+        <p class="flex items-center gap-2"><span class="text-stone-600">⛪</span> <a href="mailto:loveofcalvary2@gmail.com" class="text-blue-700">loveofcalvary2@gmail.com</a></p>
+        <p class="mt-2 text-sm text-stone-500">📍 Kitengela / Kenya — Serving more than All African Nations</p>
+      </div>
+      <p class="text-xs text-stone-500 mt-5 max-w-xl mx-auto">For security and accountability, bank details are provided only upon direct inquiry via WhatsApp or Email. Thank you for understanding.</p>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="bg-stone-950 text-stone-400 py-8 text-center">
+    <p class="text-sm">© 2026 Kingdom Faith Foundation International • Registered Nonprofit</p>
+    <p class="text-xs mt-1"><a href="#" class="hover:text-white underline">Privacy Policy</a></p>
+    <p class="text-xs mt-3 text-stone-600">Founded by Rev. John Amos & Carol Butalia • Kitengela, Kenya</p>
+  </footer>
+</body>
+</html>
