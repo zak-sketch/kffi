@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | Kingdom Faith Foundation International</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Optional small header with logo -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center">
+            <img src="logo.png" alt="KFFI Logo" class="h-12 w-auto mr-3" />
+            <span class="text-xl font-bold text-blue-900">Kingdom Faith Foundation International</span>
+        </div>
+    </header>
+
+    <!-- Main 404 content -->
+    <main class="flex-grow flex items-center justify-center">
+        <div class="text-center px-4 py-16">
+            <h1 class="text-7xl md:text-8xl font-extrabold text-blue-700 mb-4">404</h1>
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Page Not Found</h2>
+            <p class="text-lg text-gray-600 max-w-xl mx-auto mb-8">
+                The page you are looking for might have been moved, deleted, or never existed. 
+                But don’t worry — God’s work continues. Let’s get you back on track.
+            </p>
+            <a href="index.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                <i class="fas fa-home mr-2"></i>Back to Homepage
+            </a>
+            <div class="mt-6 text-gray-500">
+                <p class="text-sm">“For I know the plans I have for you, declares the Lord...” — Jeremiah 29:11</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            &copy; 2026 Kingdom Faith Foundation International • Registered Nonprofit
+        </div>
+    </footer>
+
+    <!-- Optional: source code hiding (same as main site) -->
+    <script>
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) e.preventDefault();
+            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) e.preventDefault();
+            if (e.key === 'F12') e.preventDefault();
+            if (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) e.preventDefault();
+        });
+    </script>
+</body>
+</html>
