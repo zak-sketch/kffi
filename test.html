@@ -1,152 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Kingdom Faith Foundation International | Coming Soon</title>
-
-    <!-- Tailwind CSS -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kingdom Faith Foundation International | Equipping Pastors, Caring for Orphans</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font Awesome -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts for a professional look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('banner.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .trust-bar { backdrop-filter: blur(8px); background-color: rgba(255,255,255,0.9); }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .transition-all { transition: all 0.3s ease; }
+        /* Hide scrollbar for horizontal country list if needed */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
+<body class="bg-gray-50 text-gray-800 antialiased">
 
-<body class="min-h-screen bg-slate-950 text-white">
+    <!-- ==== FLOATING ACTION BUTTONS (right side) ==== -->
+    <div class="fixed right-5 bottom-5 z-50 flex flex-col space-y-3">
+        <a href="tel:+254723781353" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition" title="Call us">
+            <i class="fas fa-phone-alt text-xl"></i>
+        </a>
+        <a href="https://wa.me/254723781353" target="_blank" class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg hover:bg-green-600 transition" title="WhatsApp">
+            <i class="fab fa-whatsapp text-xl"></i>
+        </a>
+        <a href="https://facebook.com/kingdomfaithafrica" target="_blank" class="w-12 h-12 rounded-full bg-blue-800 text-white flex items-center justify-center shadow-lg hover:bg-blue-900 transition" title="Facebook">
+            <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+    </div>
 
-    <!-- Main -->
-    <main class="min-h-screen flex items-center justify-center px-6 py-12">
-
-        <div class="max-w-4xl w-full text-center">
-
-            <!-- Logo / Cross -->
-            <div class="flex justify-center mb-8">
-                <div class="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-2xl">
-                    <span class="text-5xl text-blue-900">✝</span>
+    <!-- ==== HEADER / NAVBAR ==== -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <img src="logo.png" alt="KFFI Logo" class="h-14 w-auto mr-3" />
+                    <div>
+                        <h1 class="text-xl sm:text-2xl font-extrabold text-blue-900 leading-tight">Kingdom Faith Foundation International</h1>
+                        <p class="text-xs text-gray-600">Equipping Pastors • Caring for Orphans • Strengthening Churches</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-6 font-medium text-gray-700">
+                    <a href="#who-we-are" class="hover:text-blue-700">Who We Are</a>
+                    <a href="#impact" class="hover:text-blue-700">Impact</a>
+                    <a href="#transparency" class="hover:text-blue-700">Transparency</a>
+                    <a href="#training-team" class="hover:text-blue-700">Team</a>
+                    <a href="#home-church" class="hover:text-blue-700">Church</a>
+                    <a href="#donate" class="hover:text-blue-700">Donate</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
             </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-3 font-medium text-gray-700">
+                    <a href="#who-we-are" class="hover:text-blue-700">Who We Are</a>
+                    <a href="#impact" class="hover:text-blue-700">Impact</a>
+                    <a href="#transparency" class="hover:text-blue-700">Transparency</a>
+                    <a href="#training-team" class="hover:text-blue-700">Team</a>
+                    <a href="#home-church" class="hover:text-blue-700">Church</a>
+                    <a href="#donate" class="hover:text-blue-700">Donate</a>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-            <!-- Organization Name -->
-            <p class="text-blue-400 uppercase tracking-[0.3em] text-sm font-semibold mb-4">
-                Kingdom Faith Foundation International
-            </p>
-
-            <!-- Main Heading -->
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                Coming <span class="text-blue-400">Soon</span>
-            </h1>
-
-            <!-- Maintenance Message -->
-            <h2 class="text-2xl md:text-3xl font-bold mb-5">
-                Our Website Is Under Maintenance
+    <!-- ==== HERO SECTION ==== -->
+    <section class="hero-bg text-white py-20 md:py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
+                One Foundation. Three Callings.<br class="hidden sm:block" /> One Mission for Africa.
             </h2>
-
-            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-                We are building a new digital home for Kingdom Faith Foundation
-                International — equipping pastors, caring for orphans, and
-                strengthening local churches across Africa.
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+                For nearly 20 years since 2006, KFFI has been discipling leaders, rescuing street children, and caring for orphans from our base in Kenya to 20 nations across the continent.
             </p>
-
-            <!-- Divider -->
-            <div class="w-24 h-1 bg-blue-500 mx-auto my-8 rounded-full"></div>
-
-            <!-- Mission -->
-            <p class="text-gray-400 text-base md:text-lg italic mb-10">
-                "One Foundation. Three Callings. One Mission for Africa."
-            </p>
-
-            <!-- Contact Card -->
-            <div class="bg-white/5 border border-white/10 backdrop-blur-lg
-                        rounded-2xl p-7 md:p-10 max-w-2xl mx-auto shadow-2xl">
-
-                <h3 class="text-xl font-bold mb-6">
-                    Need to Contact Us?
-                </h3>
-
-                <div class="grid md:grid-cols-2 gap-4">
-
-                    <!-- WhatsApp -->
-                    <a
-                        href="https://wa.me/254723781353"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="flex items-center justify-center gap-3
-                               bg-green-600 hover:bg-green-500
-                               px-6 py-4 rounded-xl font-semibold
-                               transition duration-300"
-                    >
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
-                        WhatsApp Us
-                    </a>
-
-                    <!-- Email -->
-                    <a
-                        href="mailto:kingdomfaithafrica@gmail.com"
-                        class="flex items-center justify-center gap-3
-                               bg-blue-600 hover:bg-blue-500
-                               px-6 py-4 rounded-xl font-semibold
-                               transition duration-300"
-                    >
-                        <i class="fa-solid fa-envelope text-xl"></i>
-                        Email Us
-                    </a>
-
-                </div>
-
-                <!-- Contact Details -->
-                <div class="mt-7 space-y-3 text-gray-300">
-
-                    <p>
-                        <i class="fa-brands fa-whatsapp text-green-400 mr-2"></i>
-                        <strong>+254 723 781 353</strong>
-                    </p>
-
-                    <p>
-                        <i class="fa-solid fa-envelope text-blue-400 mr-2"></i>
-                        kingdomfaithafrica@gmail.com
-                    </p>
-
-                    <p>
-                        <i class="fa-solid fa-location-dot text-red-400 mr-2"></i>
-                        Kitengela, Kenya
-                    </p>
-
-                </div>
-
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#donate" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                    Equip a Pastor
+                </a>
+                <a href="#donate" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                    Care for an Orphan
+                </a>
             </div>
-
-            <!-- Home Church -->
-            <div class="mt-10 text-gray-400">
-
-                <p class="font-semibold text-gray-300">
-                    Love of Calvary Fellowship – Kitengela
-                </p>
-
-                <p class="mt-2">
-                    <i class="fa-solid fa-envelope mr-2"></i>
-                    loveofcalvary2@gmail.com
-                </p>
-
-            </div>
-
-            <!-- Footer -->
-            <footer class="mt-14 text-sm text-gray-500">
-                <p>
-                    © 2026 Kingdom Faith Foundation International
-                </p>
-
-                <p class="mt-2">
-                    Serving Africa • Based in Kenya
-                </p>
-            </footer>
-
         </div>
+    </section>
 
-    </main>
+    <!-- ==== TRUST BAR ==== -->
+    <div class="trust-bar py-4 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-semibold text-gray-800">
+            <span><i class="fas fa-users mr-1 text-blue-600"></i>176,800+ Pastors Trained</span>
+            <span><i class="fas fa-globe mr-1 text-green-600"></i>20 Countries</span>
+            <span><i class="fas fa-calendar-alt mr-1 text-purple-600"></i>Since 2006</span>
+            <span><i class="fas fa-shield-alt mr-1 text-red-600"></i>100% Financial Transparency</span>
+        </div>
+    </div>
 
+    <!-- ==== THREE PILLARS / WHO WE ARE ==== -->
+    <section id="who-we-are" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Who We Are</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">A faith‑based nonprofit with three core callings, united by one mission.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover transition-all">
+                    <img src="learners.png" alt="Equipping Pastors" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Equipping Pastors & Leaders</h3>
+                    <p class="text-gray-700">We train and disciple pastors and church leaders across Africa with sound biblical teaching. Our network includes 16 instructor pastors and 378 volunteer coordinators serving in 20 nations.</p>
+                </div>
+                <!-- Pillar 2 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover transition-all">
+                    <img src="children.jpeg" alt="Caring for Orphans" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Caring for Orphans</h3>
+                    <p class="text-gray-700">We provide holistic care for orphans and vulnerable children through three programs: Rescued Children (full‑time care), Rehabilitation of Street Children, and Vocational Training for youth.</p>
+                </div>
+                <!-- Pillar 3 -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover transition-all">
+                    <img src="community.png" alt="Faith and Transparency" class="w-full h-48 object-cover rounded-lg mb-4" />
+                    <h3 class="text-xl font-bold text-blue-900 mb-2">Rooted in Faith. Driven by Transparency.</h3>
+                    <p class="text-gray-700">We are a faith‑based nonprofit that believes transparency honors God and our donors. Every donation is tracked and reported monthly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== OUR IMPACT / PASTORS TRAINING ==== -->
+    <section id="impact" class="py-16 md:py-24 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Impact Across Africa</h2>
+                <p class="mt-3 text-lg text-gray-600">More than numbers — transformed lives.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <div class="bg-white rounded-xl p-8 shadow-md mb-6">
+                        <p class="text-5xl font-extrabold text-blue-700">176,800+</p>
+                        <p class="text-xl font-semibold text-gray-800 mt-2">Pastors and Church Leaders Trained</p>
+                        <p class="text-gray-600 mt-2">In 20 African nations, from Kenya to Chad.</p>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 shadow-md">
+                        <h4 class="font-bold text-lg mb-3">Our 4 Core Areas of Pastoral Training:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>Hearing the Voice of God</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>Walking in the Power of the Holy Spirit (The Nine Manifestations)</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>Succeeding in Spiritual Warfare</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>The Coming of the Son of Man (Eschatology)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-md">
+                    <h4 class="font-bold text-lg mb-4">20 Nations Reached</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- List of countries -->
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Kenya</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Uganda</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Tanzania</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Rwanda</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Burundi</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">DR Congo</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Zambia</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Malawi</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Zimbabwe</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Botswana</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Ghana</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">South Africa</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Namibia</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Lesotho</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Eswatini</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Mozambique</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Liberia</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Ivory Coast</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Sierra Leone</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full">Chad</span>
+                    </div>
+                    <img src="pastor.png" alt="Pastor training" class="mt-6 w-full h-48 object-cover rounded-lg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== FINANCIAL TRANSPARENCY ==== -->
+    <section id="transparency" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">100% Financial Transparency</h2>
+            <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">We believe God honors accountability. We provide monthly donor reports showing exactly how every gift is used.</p>
+            <div class="mt-8 bg-gray-50 rounded-xl p-8 max-w-3xl mx-auto shadow-sm">
+                <h3 class="text-xl font-bold text-blue-900">September 2026 Report (Example)</h3>
+                <p class="mt-4 text-gray-700">Our September 2026 investment of <strong>$10,893</strong> was dedicated primarily to education — covering University, College, and Regular School tuition for the children under our care. Monthly operational costs for rescue care, food, housing, and pastoral support are tracked separately and available on request.</p>
+                <a href="#" class="inline-block mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition">
+                    <i class="fas fa-file-pdf mr-2"></i>Download Full Financial Report (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== OUR TRAINING TEAM & SUPPORT MODEL ==== -->
+    <section id="training-team" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Training Team</h2>
+                <p class="mt-3 text-lg text-gray-600">A continent‑wide network of dedicated servants.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <p class="text-gray-700 mb-4">KFFI operates through a dedicated, continent‑wide team:</p>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start"><i class="fas fa-user-tie text-blue-600 mt-1 mr-3"></i><strong>16 Instructor Pastors</strong> from different countries in Africa — our core faculty who are sent to equip pastors.</li>
+                        <li class="flex items-start"><i class="fas fa-users text-blue-600 mt-1 mr-3"></i><strong>378 Volunteer Coordinators</strong> — active pastors serving across Africa who voluntarily mobilize and coordinate trainings.</li>
+                    </ul>
+                    <h3 class="text-lg font-bold mb-2">How Training is Supported</h3>
+                    <p class="text-gray-600 mb-4">Our instructors travel extensively to reach pastors in remote towns and villages. To make each training possible, we facilitate their transportation and boarding — costs vary depending on location and mode of transport.</p>
+                    <p class="text-gray-600 mb-4">Our coordinators and volunteers serve sacrificially without pay, though any donations to encourage their work are deeply appreciated.</p>
+                    <p class="text-gray-600"><em>To protect our team and ensure accountability, we do not publish individual instructor profiles or costs online. For all details regarding support, sponsorship, or to facilitate a training, please contact us directly through our official channel.</em></p>
+                </div>
+                <div>
+                    <img src="worshipers.png" alt="Training team and worshipers" class="w-full h-80 object-cover rounded-xl shadow-md" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== OUR HOME CHURCH (LCF Kitengela) ==== -->
+    <section id="home-church" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <img src="playground.png" alt="Church playground" class="w-full h-80 object-cover rounded-xl shadow-md" />
+                    <img src="logoorphanages.png" alt="Orphanage logo" class="mt-4 h-16 w-auto" />
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Love of Calvary Fellowship Kitengela</h2>
+                    <p class="text-lg text-gray-600 mt-2">(LCF‑Kitengela)</p>
+                    <p class="mt-4 text-gray-700">Love of Calvary Fellowship is the home church and spiritual base for all KFFI operations. Located in Kitengela, a growing suburb of Nairobi, LCF exists to minister hope and preach the love of Calvary to families in our community.</p>
+                    <div class="mt-6 bg-gray-50 rounded-lg p-5">
+                        <h3 class="font-bold text-blue-900">Sunday Services: 10:00 AM – 12:30 PM</h3>
+                        <ul class="mt-3 space-y-1 text-gray-700">
+                            <li><i class="fas fa-bible mr-2 text-green-600"></i>New Believers Bible Study</li>
+                            <li><i class="fas fa-child mr-2 text-green-600"></i>Children Service</li>
+                            <li><i class="fas fa-church mr-2 text-green-600"></i>Main Service for All</li>
+                        </ul>
+                        <p class="mt-4"><i class="fas fa-envelope mr-2 text-blue-600"></i><a href="mailto:loveofcalvary2@gmail.com" class="hover:underline">loveofcalvary2@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== PARTNER WITH US / DONATE & CONTACT ==== -->
+    <section id="donate" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-blue-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Your Gift Transforms Lives</h2>
+                <p class="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">Partner with us to equip pastors, educate children, and rescue the vulnerable.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Donation Options -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Donation Options</h3>
+                    <div class="grid sm:grid-cols-3 gap-4 mb-6">
+                        <div class="bg-blue-50 p-4 rounded-lg text-center">
+                            <i class="fas fa-user-tie text-3xl text-blue-600 mb-2"></i>
+                            <h4 class="font-semibold">EQUIP A PASTOR</h4>
+                            <p class="text-sm text-gray-600">Facilitate instructor training</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg text-center">
+                            <i class="fas fa-graduation-cap text-3xl text-green-600 mb-2"></i>
+                            <h4 class="font-semibold">EDUCATE A CHILD</h4>
+                            <p class="text-sm text-gray-600">Tuition for School, College, University</p>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-lg text-center">
+                            <i class="fas fa-hand-holding-heart text-3xl text-orange-500 mb-2"></i>
+                            <h4 class="font-semibold">RESCUE & RESTORE</h4>
+                            <p class="text-sm text-gray-600">Food, Housing & Rehabilitation</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm"><em>For security and accountability, bank details are provided only upon direct inquiry via WhatsApp or Email. Thank you for understanding.</em></p>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" required class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" required class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500" />
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" required class="mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition">
+                            Send Message
+                        </button>
+                    </form>
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <p class="font-semibold">Rev. John Amos Butalia</p>
+                        <p class="text-sm"><i class="fab fa-whatsapp mr-2 text-green-500"></i><a href="https://wa.me/254723781353" class="hover:underline">+254723781353</a></p>
+                        <p class="text-sm"><i class="fas fa-envelope mr-2 text-blue-500"></i><a href="mailto:kingdomfaithafrica@gmail.com" class="hover:underline">kingdomfaithafrica@gmail.com</a></p>
+                        <p class="text-sm"><i class="fas fa-envelope mr-2 text-blue-500"></i><a href="mailto:loveofcalvary2@gmail.com" class="hover:underline">loveofcalvary2@gmail.com</a></p>
+                        <p class="text-sm"><i class="fas fa-map-marker-alt mr-2 text-red-500"></i>Kitengela, Kenya</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== FOOTER ==== -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">&copy; 2026 Kingdom Faith Foundation International • Registered Nonprofit • <a href="#" class="hover:underline">Privacy Policy</a></p>
+            <p class="text-xs mt-2 text-gray-400">Serving more than All African Nations</p>
+        </div>
+    </footer>
+
+    <!-- ==== SCRIPTS ==== -->
+    <script>
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Contact form submission (demo only)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will respond shortly.');
+            this.reset();
+        });
+
+        // ----- Source code hiding (best effort) -----
+        // Disable right-click context menu
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+
+        // Disable common keyboard shortcuts for viewing source
+        document.addEventListener('keydown', function(e) {
+            // Ctrl+U (view source)
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I (dev tools)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) {
+                e.preventDefault();
+                return false;
+            }
+            // F12
+            if (e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+J (console)
+            if (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+    </script>
 </body>
 </html>
