@@ -66,6 +66,106 @@
                 transform: translateY(0);
             }
         }
+
+        /* ── CLASSIC HOVER: character + attention ── */
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1e293b;
+            background: #f1f5f9;
+            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-decoration: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+        }
+        .resource-link .link-icon {
+            font-size: 1.15rem;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .resource-link .link-arrow {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        /* The "character" — a subtle decorative dot that draws attention */
+        .resource-link .attention-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #2563eb;
+            margin-left: 0.25rem;
+            transition: all 0.3s ease;
+            opacity: 0.4;
+            transform: scale(0.8);
+        }
+
+        /* Hover state — classic "pop" with character and attention */
+        .resource-link:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.18);
+            border-color: #2563eb;
+            background: #ffffff;
+            color: #0f172a;
+        }
+        .resource-link:hover .link-icon {
+            transform: rotate(-6deg) scale(1.1);
+            color: #2563eb;
+        }
+        .resource-link:hover .link-arrow {
+            transform: translateX(5px);
+            color: #2563eb;
+        }
+        .resource-link:hover .attention-dot {
+            opacity: 1;
+            transform: scale(1.3);
+            background: #f97316;
+            box-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
+            animation: pulse-dot 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 8px rgba(249, 115, 22, 0);
+            }
+        }
+
+        .resource-links-wrapper {
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            border-radius: 1.25rem;
+            padding: 1.5rem 2rem;
+            border: 1px solid rgba(37, 99, 235, 0.10);
+            margin-top: 1.5rem;
+        }
+        .resource-links-wrapper .label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .resource-links-wrapper .label i {
+            color: #2563eb;
+        }
+        .resource-links-wrapper .divider-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #dbeafe, transparent);
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -136,9 +236,6 @@
                 <a href="#partner" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition btn-orange">
                     Care for an Orphan
                 </a>
-
-                </a>
-                <!-- NEW: Meet Our Founders button → opens church.html in new tab -->
                 <a href="church.html" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
                     <i class="fas fa-users mr-2"></i> Meet Our Founders
                 </a>
@@ -201,6 +298,7 @@
                         We found pastors preaching with passion but without tools. They love the Word, but have never attended Bible school due to cost and financial constraints. KFFI was born to fill that gap.
                     </p>
 
+                    <!-- ─── WHAT WE TEACH ─── -->
                     <div>
                         <h3 class="text-xl font-bold text-blue-900 mb-3">What We Teach</h3>
                         <p class="text-gray-700 mb-2">We ground ministers in the Word and in the Power of the Spirit:</p>
@@ -211,6 +309,37 @@
                             <li>Marriage &amp; Family for Ministers</li>
                             <li>Other Foundational Topics for Grounding a Minister in His Calling</li>
                         </ul>
+
+                        <!-- ═══ NEW: RESOURCE LINKS with classic hover (character + attention) ═══ -->
+                        <div class="resource-links-wrapper mt-6">
+                            <div class="label">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>For more teachings, visit our resource centre</span>
+                                <span class="divider-line"></span>
+                            </div>
+                            <div class="flex flex-wrap items-center gap-4 mt-3">
+                                <!-- Link 1 -->
+                                <a href="https://kingdomfaithministries.org" target="_blank" class="resource-link">
+                                    <i class="fas fa-globe-africa link-icon"></i>
+                                    kingdomfaithministries.org
+                                    <i class="fas fa-arrow-right link-arrow text-sm"></i>
+                                    <span class="attention-dot"></span>
+                                </a>
+                                <!-- Link 2 -->
+                                <a href="https://Www.lightofword.org" target="_blank" class="resource-link">
+                                    <i class="fas fa-bible link-icon"></i>
+                                    lightofword.org
+                                    <i class="fas fa-arrow-right link-arrow text-sm"></i>
+                                    <span class="attention-dot"></span>
+                                </a>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2 flex items-center gap-1.5">
+                                <i class="fas fa-external-link-alt text-blue-400"></i>
+                                Opens in new tab · Free teaching resources
+                            </p>
+                        </div>
+                        <!-- ═══ END RESOURCE LINKS ═══ -->
+
                     </div>
 
                     <div>
@@ -478,10 +607,14 @@
     // Source code protection (best effort)
     document.addEventListener('contextmenu', e => e.preventDefault());
     document.addEventListener('keydown', function(e) {
-        if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault(); return false; }
-        if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) { e.preventDefault(); return false; }
-        if (e.key === 'F12') { e.preventDefault(); return false; }
-        if (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) { e.preventDefault(); return false; }
+        if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault();
+            return false; }
+        if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) { e.preventDefault();
+            return false; }
+        if (e.key === 'F12') { e.preventDefault();
+            return false; }
+        if (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) { e.preventDefault();
+            return false; }
     });
 </script>
 </body>
