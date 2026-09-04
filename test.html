@@ -9,7 +9,7 @@
     </script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!-- Google Fonts for a professional look -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
         body {
@@ -24,24 +24,12 @@
             backdrop-filter: blur(8px);
             background-color: rgba(255, 255, 255, 0.9);
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        .transition-all {
+        .card-hover {
             transition: all 0.3s ease;
         }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        .form-input:focus {
-            border-color: #2563eb;
-            ring: 2px solid #2563eb;
-            ring-offset: 2px;
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
         }
         .section-quote {
             border-left: 4px solid #2563eb;
@@ -49,11 +37,40 @@
             font-style: italic;
             color: #1e293b;
         }
+        .form-input:focus {
+            border-color: #2563eb;
+            ring: 2px solid #2563eb;
+            ring-offset: 2px;
+        }
+        .btn-primary {
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+        .btn-orange:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
-    <!-- ==== FLOATING ACTION BUTTONS (right side) ==== -->
+    <!-- ======== FLOATING ACTION BUTTONS ======== -->
     <div class="fixed right-5 bottom-5 z-50 flex flex-col space-y-3">
         <a href="tel:+254723781353" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition" title="Call us">
             <i class="fas fa-phone-alt text-xl"></i>
@@ -66,7 +83,7 @@
         </a>
     </div>
 
-    <!-- ==== HEADER / NAVBAR ==== -->
+    <!-- ======== HEADER / NAVBAR ======== -->
     <header class="bg-white shadow-md sticky top-0 z-40">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -82,7 +99,7 @@
                     <a href="#pastor-training" class="hover:text-blue-700">Pastor Training</a>
                     <a href="#home-church" class="hover:text-blue-700">Love of Calvary</a>
                     <a href="#transparency" class="hover:text-blue-700">Transparency</a>
-                    <a href="#donate" class="hover:text-blue-700">Partner With Us</a>
+                    <a href="#partner" class="hover:text-blue-700">Partner</a>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
@@ -97,13 +114,13 @@
                     <a href="#pastor-training" class="hover:text-blue-700">Pastor Training</a>
                     <a href="#home-church" class="hover:text-blue-700">Love of Calvary</a>
                     <a href="#transparency" class="hover:text-blue-700">Transparency</a>
-                    <a href="#donate" class="hover:text-blue-700">Partner With Us</a>
+                    <a href="#partner" class="hover:text-blue-700">Partner</a>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- ==== HERO SECTION ==== -->
+    <!-- ======== HERO SECTION ======== -->
     <section class="hero-bg text-white py-20 md:py-32">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
@@ -113,17 +130,17 @@
                 For nearly 20 years since 2006, KFFI has been discipling leaders, rescuing street children, and caring for orphans from our base in Kenya to 20 nations across the continent.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#donate" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                <a href="#partner" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition btn-primary">
                     Equip a Pastor
                 </a>
-                <a href="#donate" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                <a href="#partner" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition btn-orange">
                     Care for an Orphan
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ==== TRUST BAR ==== -->
+    <!-- ======== TRUST BAR ======== -->
     <div class="trust-bar py-4 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-semibold text-gray-800">
             <span><i class="fas fa-users mr-1 text-blue-600"></i>176,800+ Pastors Trained</span>
@@ -133,7 +150,7 @@
         </div>
     </div>
 
-    <!-- ==== WHO WE ARE (summary) ==== -->
+    <!-- ======== WHO WE ARE ======== -->
     <section id="who-we-are" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -141,20 +158,17 @@
                 <p class="mt-3 text-lg text-gray-600 max-w-3xl mx-auto">A faith‑based nonprofit with three core callings, united by one mission.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Pillar 1 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover transition-all">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover">
                     <img src="worshipers.png" alt="Equipping Pastors" class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-xl font-bold text-blue-900 mb-2">Equipping Pastors & Leaders</h3>
                     <p class="text-gray-700">We train and disciple pastors and church leaders across Africa with sound biblical teaching. Our network includes 16 instructor pastors and 378 volunteer coordinators serving in 20 nations.</p>
                 </div>
-                <!-- Pillar 2 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover transition-all">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover">
                     <img src="children.jpeg" alt="Caring for Orphans" class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-xl font-bold text-blue-900 mb-2">Caring for Orphans</h3>
                     <p class="text-gray-700">We provide holistic care for orphans and vulnerable children through three programs: Rescued Children (full‑time care), Rehabilitation of Street Children, and Vocational Training for youth.</p>
                 </div>
-                <!-- Pillar 3 -->
-                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover transition-all">
+                <div class="bg-gray-50 rounded-xl p-6 shadow-sm card-hover">
                     <img src="community.png" alt="Faith and Transparency" class="w-full h-48 object-cover rounded-lg mb-4" />
                     <h3 class="text-xl font-bold text-blue-900 mb-2">Rooted in Faith. Driven by Transparency.</h3>
                     <p class="text-gray-700">We are a faith‑based nonprofit that believes transparency honors God and our donors. Every donation is tracked and reported monthly.</p>
@@ -163,9 +177,7 @@
         </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- PAGE 1: PASTOR TRAINING — Detailed Content                     -->
-    <!-- ============================================================ -->
+    <!-- ======== PASTOR TRAINING — Detailed Content ======== -->
     <section id="pastor-training" class="py-16 md:py-24 bg-blue-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -217,7 +229,7 @@
 
                     <p class="text-gray-700 font-medium">This is KFFI. We train faithful men to teach others.</p>
 
-                    <a href="#donate" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                    <a href="#partner" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition btn-primary">
                         Sponsor a Pastor
                     </a>
                 </div>
@@ -240,9 +252,7 @@
         </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- PAGE 2: LOVE OF CALVARY FAMILY CHURCH — Detailed Content      -->
-    <!-- ============================================================ -->
+    <!-- ======== LOVE OF CALVARY FAMILY CHURCH ======== -->
     <section id="home-church" class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -284,7 +294,7 @@
                         <p class="text-sm text-gray-600 mt-1">From Kitengela to the nations.</p>
                     </blockquote>
 
-                    <a href="#donate" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition">
+                    <a href="#partner" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition btn-orange">
                         Build the Training Center
                     </a>
                 </div>
@@ -292,7 +302,7 @@
         </div>
     </section>
 
-    <!-- ==== FINANCIAL TRANSPARENCY — REQUEST REPORT VIA EMAIL ==== -->
+    <!-- ======== FINANCIAL TRANSPARENCY — REQUEST REPORT ======== -->
     <section id="transparency" class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
@@ -342,7 +352,7 @@
                         </div>
 
                         <button type="submit"
-                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-6 rounded-xl transition shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                        class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-6 rounded-xl transition shadow-md hover:shadow-lg flex items-center justify-center gap-2 btn-primary">
                         <i class="fas fa-paper-plane"></i> Send Report to My Email
                     </button>
                 </form>
@@ -359,8 +369,8 @@
     </div>
 </section>
 
-<!-- ==== PAGE 3: PARTNER WITH US (Donate) ==== -->
-<section id="donate" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-blue-100">
+<!-- ======== PARTNER WITH US ======== -->
+<section id="partner" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-blue-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Partner With Us</h2>
@@ -369,7 +379,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Option 1: Give to Pastor Training -->
-            <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all">
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover">
                 <div class="flex items-center gap-4 mb-4">
                     <div class="bg-blue-100 p-3 rounded-full">
                         <i class="fas fa-user-tie text-3xl text-blue-600"></i>
@@ -382,11 +392,11 @@
                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Supports residential training at Kitengela</li>
                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Provides ongoing mentorship</li>
                 </ul>
-                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition">Sponsor a Pastor</a>
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition btn-primary">Sponsor a Pastor</a>
             </div>
 
             <!-- Option 2: Give to Love of Calvary Church Building -->
-            <div class="bg-white rounded-xl shadow-md p-6 card-hover transition-all">
+            <div class="bg-white rounded-xl shadow-md p-6 card-hover">
                 <div class="flex items-center gap-4 mb-4">
                     <div class="bg-orange-100 p-3 rounded-full">
                         <i class="fas fa-church text-3xl text-orange-500"></i>
@@ -399,7 +409,7 @@
                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Host pastors from many nations</li>
                     <li><i class="fas fa-check-circle text-green-500 mr-2"></i>Serve as a community light in Kitengela</li>
                 </ul>
-                <a href="#" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition">Build the Training Center</a>
+                <a href="#" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition btn-orange">Build the Training Center</a>
             </div>
         </div>
 
@@ -422,7 +432,7 @@
     </div>
 </section>
 
-<!-- ==== FOOTER ==== -->
+<!-- ======== FOOTER ======== -->
 <footer class="bg-gray-900 text-white py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p class="text-sm">&copy; 2026 Kingdom Faith Ministry International • Registered Nonprofit • <a href="#" class="hover:underline">Privacy Policy</a></p>
@@ -430,7 +440,7 @@
     </div>
 </footer>
 
-<!-- ==== SCRIPTS ==== -->
+<!-- ======== SCRIPTS ======== -->
 <script>
     // Mobile menu toggle
     const menuButton = document.getElementById('mobile-menu-button');
