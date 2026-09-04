@@ -15,67 +15,107 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.jpg');
+        /* Hero with subtle gradient overlay */
+        .hero-founders {
+            background: linear-gradient(135deg, rgba(10, 30, 70, 0.85) 0%, rgba(20, 50, 100, 0.75) 100%), url('banner.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center 30%;
         }
-        .card-hover {
-            transition: all 0.3s ease;
+        /* Smooth card hover with lift */
+        .card-lift {
+            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .card-hover:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        .card-lift:hover {
+            transform: translateY(-8px) scale(1.01);
+            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.25);
         }
-        .founder-card {
-            transition: all 0.3s ease;
+        /* Image frame with subtle glow */
+        .image-frame {
+            position: relative;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.15);
+            transition: box-shadow 0.4s ease;
         }
-        .founder-card:hover {
-            transform: scale(1.01);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        .image-frame:hover {
+            box-shadow: 0 32px 64px -12px rgba(37, 99, 235, 0.20);
         }
-        .section-quote {
+        .image-frame::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
+            pointer-events: none;
+        }
+        /* Animated stat counters */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+        /* Quote block with accent */
+        .quote-accent {
             border-left: 4px solid #2563eb;
             padding-left: 1.5rem;
             font-style: italic;
             color: #1e293b;
         }
-        .btn-primary {
-            transition: all 0.2s ease;
+        /* Gradient text utility */
+        .text-gradient-blue {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .btn-primary:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        .text-gradient-pink {
+            background: linear-gradient(135deg, #be185d, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .fade-in {
-            animation: fadeIn 0.8s ease-in-out;
+        /* Button pulse animation */
+        .btn-pulse {
+            animation: pulseGlow 2.5s infinite;
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        @keyframes pulseGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.3);
             }
+            50% {
+                box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
+            }
+        }
+        /* Fade-in on scroll (simple) */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+        .fade-up-delay-1 {
+            animation-delay: 0.1s;
+        }
+        .fade-up-delay-2 {
+            animation-delay: 0.25s;
+        }
+        .fade-up-delay-3 {
+            animation-delay: 0.4s;
+        }
+        @keyframes fadeUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        /* Image hover overlay effect */
-        .image-frame {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
+        /* Mobile menu fix */
+        .mobile-menu-open {
+            display: flex !important;
         }
-        .image-frame::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.2) 100%);
-            pointer-events: none;
-            border-radius: 1rem;
+        /* decorative dot pattern */
+        .dot-pattern {
+            background-image: radial-gradient(circle, #dbeafe 1px, transparent 1px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
@@ -83,19 +123,19 @@
 
     <!-- ======== FLOATING ACTION BUTTONS ======== -->
     <div class="fixed right-5 bottom-5 z-50 flex flex-col space-y-3">
-        <a href="tel:+254723781353" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition" title="Call us">
+        <a href="tel:+254723781353" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-transform hover:scale-110" title="Call us">
             <i class="fas fa-phone-alt text-xl"></i>
         </a>
-        <a href="https://wa.me/254723781353" target="_blank" class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg hover:bg-green-600 transition" title="WhatsApp">
+        <a href="https://wa.me/254723781353" target="_blank" class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg hover:bg-green-600 transition-transform hover:scale-110" title="WhatsApp">
             <i class="fab fa-whatsapp text-xl"></i>
         </a>
-        <a href="https://facebook.com/kingdomfaithafrica" target="_blank" class="w-12 h-12 rounded-full bg-blue-800 text-white flex items-center justify-center shadow-lg hover:bg-blue-900 transition" title="Facebook">
+        <a href="https://facebook.com/kingdomfaithafrica" target="_blank" class="w-12 h-12 rounded-full bg-blue-800 text-white flex items-center justify-center shadow-lg hover:bg-blue-900 transition-transform hover:scale-110" title="Facebook">
             <i class="fab fa-facebook-f text-xl"></i>
         </a>
     </div>
 
     <!-- ======== HEADER / NAVBAR ======== -->
-    <header class="bg-white shadow-md sticky top-0 z-40">
+    <header class="bg-white shadow-md sticky top-0 z-40 border-b border-gray-100">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center">
@@ -110,7 +150,7 @@
                     <a href="index.html#who-we-are" class="hover:text-blue-700">Who We Are</a>
                     <a href="index.html#pastor-training" class="hover:text-blue-700">Pastor Training</a>
                     <a href="index.html#home-church" class="hover:text-blue-700">Love of Calvary</a>
-                    <a href="founders.html" class="text-blue-700 font-semibold">Our Founders</a>
+                    <a href="founders.html" class="text-blue-700 font-semibold border-b-2 border-blue-600 pb-0.5">Our Founders</a>
                     <a href="index.html#partner" class="hover:text-blue-700">Partner</a>
                 </div>
                 <div class="md:hidden">
@@ -120,7 +160,7 @@
                 </div>
             </div>
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4">
+            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-100 mt-2 pt-4">
                 <div class="flex flex-col space-y-3 font-medium text-gray-700">
                     <a href="index.html" class="hover:text-blue-700">Home</a>
                     <a href="index.html#who-we-are" class="hover:text-blue-700">Who We Are</a>
@@ -134,107 +174,131 @@
     </header>
 
     <!-- ======== HERO SECTION ======== -->
-    <section class="hero-bg text-white py-20 md:py-28">
+    <section class="hero-founders text-white py-20 md:py-28">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-4">
-                Meet Our Founders
-            </h2>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-6">
-                Rev. John Amos Butalia &amp; Carol June Butalia — Together, serving the Church in Africa.
+            <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold tracking-wider uppercase mb-4 border border-white/30">
+                <i class="fas fa-crown mr-2 text-yellow-300"></i> Meet the Founders
+            </div>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+                Rev. John &amp; Carol Butalia
+            </h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto text-blue-100 font-light">
+                Together, building the Church across Africa — one pastor, one child, one family at a time.
             </p>
-            <div class="w-24 h-1 bg-blue-400 mx-auto rounded-full"></div>
+            <div class="mt-6 flex justify-center gap-2">
+                <span class="h-1 w-12 bg-blue-400 rounded-full"></span>
+                <span class="h-1 w-4 bg-pink-400 rounded-full"></span>
+                <span class="h-1 w-4 bg-blue-400 rounded-full"></span>
+            </div>
         </div>
     </section>
 
-    <!-- ======== FAMILY PORTRAIT ======== -->
-    <section class="py-12 md:py-16 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="image-frame shadow-xl">
-                <img src="fam.png" alt="Rev. John Amos Butalia and Carol June Butalia — Founders of Kingdom Faith Ministry International" class="w-full h-auto object-cover" />
+    <!-- ======== FAMILY PORTRAIT (fam2.png) ======== -->
+    <section class="py-12 md:py-16 bg-white relative">
+        <div class="absolute inset-0 dot-pattern opacity-30 pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="image-frame">
+                <img src="fam2.png" alt="Rev. John Amos Butalia and Carol June Butalia — Founders of Kingdom Faith Ministry International" class="w-full h-auto object-cover" />
             </div>
-            <p class="text-center text-sm text-gray-500 mt-3">
-                <i class="fas fa-camera mr-1"></i> Rev. John Amos Butalia &amp; Carol June Butalia — Founders of Kingdom Faith Ministry International
+            <p class="text-center text-sm text-gray-500 mt-4 flex items-center justify-center gap-2">
+                <i class="fas fa-camera text-gray-400"></i>
+                Rev. John Amos Butalia &amp; Carol June Butalia — Founders of KFFI
+                <span class="inline-block w-1 h-1 bg-gray-300 rounded-full"></span>
+                <span class="text-gray-400">Kitengela, Kenya</span>
             </p>
         </div>
     </section>
 
     <!-- ======== REV. JOHN AMOS BUTALIA ======== -->
-    <section class="py-16 md:py-24 bg-gray-50 fade-in">
+    <section class="py-16 md:py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
-                <!-- Bio (takes 3/5 on large screens) -->
-                <div class="lg:col-span-3">
-                    <div class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">
-                        <i class="fas fa-user-tie mr-1"></i> Founder
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                <!-- Bio (takes 3/5) -->
+                <div class="lg:col-span-3 fade-up">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-800 text-sm font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
+                            <i class="fas fa-user-tie"></i> Founder &amp; President
+                        </span>
+                        <span class="text-sm text-gray-400 flex items-center gap-1">
+                            <i class="fas fa-calendar-alt"></i> Since 2006
+                        </span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Rev. John Amos Butalia</h2>
-                    <p class="text-lg text-blue-600 font-medium mt-1">Founder, Kingdom Faith Ministry International &amp; Love of Calvary Family Church</p>
+                    <p class="text-lg text-blue-600 font-medium mt-1">Equipping Pastors, Strengthening the African Church</p>
 
                     <div class="mt-6 space-y-4 text-gray-700 leading-relaxed">
                         <p>
-                            Rev. John Amos Butalia has served in Gospel ministry for over two decades, with a burden to strengthen the African church by strengthening its pastors. He is the Founder of Kingdom Faith Ministry International, a ministry that has equipped pastors and Gospel ministers in <strong>17 African countries</strong>.
+                            <span class="font-semibold text-blue-800">Rev. John Amos Butalia</span> has served in Gospel ministry for over two decades with a singular burden: to strengthen the African church by equipping its pastors. He is the founder of <span class="font-semibold">Kingdom Faith Ministry International</span>, a movement that has trained pastors and Gospel ministers in <strong>17 African nations</strong>.
                         </p>
                         <p>
-                            Rev. John observed that many pastors preach with passion but without tools, unable to afford Bible school. KFFI was born to fill that gap. His teaching focuses on grounding ministers in their calling: how to hear the voice of God, ministering in power through the nine manifestations of the Holy Spirit, the coming of the Son of Man, and marriage and family for ministers.
+                            Rev. John observed that many pastors preach with passion but lack the tools to disciple effectively, often unable to afford formal Bible training. KFFI was born to fill that gap. His teaching focuses on grounding ministers in their calling: how to hear the voice of God, minister in power through the nine manifestations of the Holy Spirit, understand the coming of the Son of Man, and build strong marriages and families for ministry.
                         </p>
                         <p>
-                            For years this work was itinerant. Today, the Lord has established <strong>Love of Calvary Family Church, Kitengela</strong> as KFFI's home base — a model church and residential training center for pastors from many nations.
+                            For years, the work was itinerant — traveling by road and air to reach remote villages. Today, the Lord has established <span class="font-semibold">Love of Calvary Family Church, Kitengela</span>, as KFFI's home base — a model church and residential training center that hosts pastors from many nations for intensive equipping.
                         </p>
+                        <div class="bg-blue-50 rounded-xl p-5 border border-blue-100 mt-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-quote-left text-blue-400 text-xl mt-1"></i>
+                                <p class="text-sm text-gray-700 italic">
+                                    “I believe the greatest need in Africa is not more churches, but <strong>well-equipped pastors</strong> who can lead with integrity, power, and love. When the shepherd is strengthened, the flock thrives.”
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-6 flex flex-wrap gap-4">
-                        <a href="index.html#partner" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-6 rounded-lg transition btn-primary">
-                            <i class="fas fa-hands-helping mr-2"></i>Support His Work
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="index.html#partner" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition btn-pulse inline-flex items-center gap-2">
+                            <i class="fas fa-hands-helping"></i> Support His Work
                         </a>
-                        <a href="mailto:kingdomfaithafrica@gmail.com" class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-2.5 px-6 rounded-lg transition">
-                            <i class="fas fa-envelope mr-2"></i>Send a Message
+                        <a href="mailto:kingdomfaithafrica@gmail.com" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2">
+                            <i class="fas fa-envelope"></i> Send Message
                         </a>
                     </div>
                 </div>
 
-                <!-- Quick Stats (takes 2/5 on large screens) -->
-                <div class="lg:col-span-2 space-y-4">
-                    <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                <!-- Quick Stats (takes 2/5) -->
+                <div class="lg:col-span-2 space-y-4 fade-up fade-up-delay-1">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm card-lift border border-gray-100">
                         <div class="flex items-center gap-4">
-                            <div class="bg-blue-100 p-3 rounded-full">
+                            <div class="bg-blue-100 p-3.5 rounded-full">
                                 <i class="fas fa-globe-africa text-2xl text-blue-600"></i>
                             </div>
                             <div>
-                                <p class="text-2xl font-extrabold text-blue-600">17</p>
-                                <p class="text-sm text-gray-600">Nations Reached</p>
+                                <p class="text-3xl font-extrabold text-blue-600 stat-number">17</p>
+                                <p class="text-sm text-gray-500 font-medium">Nations Reached</p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm card-lift border border-gray-100">
                         <div class="flex items-center gap-4">
-                            <div class="bg-green-100 p-3 rounded-full">
-                                <i class="fas fa-users text-2xl text-green-600"></i>
+                            <div class="bg-emerald-100 p-3.5 rounded-full">
+                                <i class="fas fa-users text-2xl text-emerald-600"></i>
                             </div>
                             <div>
-                                <p class="text-2xl font-extrabold text-green-600">176,800+</p>
-                                <p class="text-sm text-gray-600">Pastors Trained</p>
+                                <p class="text-3xl font-extrabold text-emerald-600 stat-number">176,800<span class="text-lg">+</span></p>
+                                <p class="text-sm text-gray-500 font-medium">Pastors Trained</p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm card-lift border border-gray-100">
                         <div class="flex items-center gap-4">
-                            <div class="bg-purple-100 p-3 rounded-full">
+                            <div class="bg-purple-100 p-3.5 rounded-full">
                                 <i class="fas fa-calendar-alt text-2xl text-purple-600"></i>
                             </div>
                             <div>
-                                <p class="text-2xl font-extrabold text-purple-600">20+</p>
-                                <p class="text-sm text-gray-600">Years in Ministry</p>
+                                <p class="text-3xl font-extrabold text-purple-600 stat-number">20<span class="text-lg">+</span></p>
+                                <p class="text-sm text-gray-500 font-medium">Years in Ministry</p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white rounded-xl p-6 shadow-sm card-hover">
+                    <div class="bg-white rounded-2xl p-6 shadow-sm card-lift border border-gray-100">
                         <div class="flex items-center gap-4">
-                            <div class="bg-orange-100 p-3 rounded-full">
+                            <div class="bg-orange-100 p-3.5 rounded-full">
                                 <i class="fas fa-church text-2xl text-orange-500"></i>
                             </div>
                             <div>
-                                <p class="text-2xl font-extrabold text-orange-500">1</p>
-                                <p class="text-sm text-gray-600">Home Church — Love of Calvary</p>
+                                <p class="text-3xl font-extrabold text-orange-500 stat-number">1</p>
+                                <p class="text-sm text-gray-500 font-medium">Home Church — LCF Kitengela</p>
                             </div>
                         </div>
                     </div>
@@ -246,81 +310,94 @@
     <!-- ======== CAROL JUNE BUTALIA ======== -->
     <section class="py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
-                <!-- Quick Stats (takes 2/5 on large screens) -->
-                <div class="lg:col-span-2 space-y-4 order-2 lg:order-1">
-                    <div class="bg-pink-50 rounded-xl p-6 shadow-sm card-hover">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                <!-- Quick Stats (takes 2/5, left on large) -->
+                <div class="lg:col-span-2 space-y-4 order-2 lg:order-1 fade-up fade-up-delay-2">
+                    <div class="bg-pink-50 rounded-2xl p-6 shadow-sm card-lift border border-pink-100">
                         <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3 rounded-full">
+                            <div class="bg-pink-100 p-3.5 rounded-full">
                                 <i class="fas fa-heart text-2xl text-pink-500"></i>
                             </div>
                             <div>
-                                <p class="text-2xl font-extrabold text-pink-500">350+</p>
-                                <p class="text-sm text-gray-600">Orphans Cared For</p>
+                                <p class="text-3xl font-extrabold text-pink-500 stat-number">350<span class="text-lg">+</span></p>
+                                <p class="text-sm text-gray-500 font-medium">Orphans &amp; Vulnerable Children Cared For</p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-pink-50 rounded-xl p-6 shadow-sm card-hover">
+                    <div class="bg-pink-50 rounded-2xl p-6 shadow-sm card-lift border border-pink-100">
                         <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3 rounded-full">
+                            <div class="bg-pink-100 p-3.5 rounded-full">
                                 <i class="fas fa-female text-2xl text-pink-500"></i>
                             </div>
                             <div>
-                                <p class="text-2xl font-extrabold text-pink-500">100+</p>
-                                <p class="text-sm text-gray-600">Women &amp; Pastors' Wives Supported</p>
+                                <p class="text-3xl font-extrabold text-pink-500 stat-number">100<span class="text-lg">+</span></p>
+                                <p class="text-sm text-gray-500 font-medium">Women &amp; Pastors' Wives Mentored</p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-pink-50 rounded-xl p-6 shadow-sm card-hover">
+                    <div class="bg-pink-50 rounded-2xl p-6 shadow-sm card-lift border border-pink-100">
                         <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3 rounded-full">
+                            <div class="bg-pink-100 p-3.5 rounded-full">
                                 <i class="fas fa-child text-2xl text-pink-500"></i>
                             </div>
                             <div>
-                                <p class="text-2xl font-extrabold text-pink-500">3</p>
-                                <p class="text-sm text-gray-600">Compassion Programs</p>
+                                <p class="text-3xl font-extrabold text-pink-500 stat-number">3</p>
+                                <p class="text-sm text-gray-500 font-medium">Compassion Programs</p>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-pink-50 rounded-xl p-6 shadow-sm card-hover">
+                    <div class="bg-pink-50 rounded-2xl p-6 shadow-sm card-lift border border-pink-100">
                         <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3 rounded-full">
+                            <div class="bg-pink-100 p-3.5 rounded-full">
                                 <i class="fas fa-hands-helping text-2xl text-pink-500"></i>
                             </div>
                             <div>
-                                <p class="text-2xl font-extrabold text-pink-500">15+</p>
-                                <p class="text-sm text-gray-600">Years in Compassion Ministry</p>
+                                <p class="text-3xl font-extrabold text-pink-500 stat-number">15<span class="text-lg">+</span></p>
+                                <p class="text-sm text-gray-500 font-medium">Years in Compassion Ministry</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bio (takes 3/5 on large screens) -->
-                <div class="lg:col-span-3 order-1 lg:order-2">
-                    <div class="inline-block bg-pink-100 text-pink-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">
-                        <i class="fas fa-heart mr-1"></i> Co-Founder
+                <!-- Bio (takes 3/5, right on large) -->
+                <div class="lg:col-span-3 order-1 lg:order-2 fade-up fade-up-delay-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-pink-100 text-pink-800 text-sm font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
+                            <i class="fas fa-heart"></i> Co-Founder
+                        </span>
+                        <span class="text-sm text-gray-400 flex items-center gap-1">
+                            <i class="fas fa-calendar-alt"></i> Since 2006
+                        </span>
                     </div>
                     <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Carol June Butalia</h2>
-                    <p class="text-lg text-pink-600 font-medium mt-1">Co-Founder, Compassion &amp; Family Ministry</p>
+                    <p class="text-lg text-pink-600 font-medium mt-1">Compassion &amp; Family Ministry Leader</p>
 
                     <div class="mt-6 space-y-4 text-gray-700 leading-relaxed">
                         <p>
-                            Carol is the wife of Rev. John and Co-Founder of the ministry. She is the pioneer of KFFI's compassion work among orphans and vulnerable children, extending the love of Calvary to widows and young families in need.
+                            <span class="font-semibold text-pink-700">Carol June Butalia</span> is the devoted wife of Rev. John and Co-Founder of Kingdom Faith Ministry International. She is the heart behind KFFI's compassion work among orphans and vulnerable children, extending the love of Calvary to widows and young families in need.
                         </p>
                         <p>
-                            She leads ministry to women, pastors' wives, and children, ensuring that as pastors are trained in truth, families are strengthened in love. Her heart for the vulnerable has shaped KFFI's holistic approach to caring for the whole person — body, mind, and spirit.
+                            Carol leads ministry to women, pastors' wives, and children, ensuring that as pastors are trained in truth, families are strengthened in love. Her heart for the vulnerable has shaped KFFI's holistic approach — caring for the whole person: body, mind, and spirit.
                         </p>
                         <p>
-                            Carol's gentle strength and unwavering faith have been a cornerstone of the ministry, providing a nurturing presence that reflects the love of Christ to all who come through the doors of Love of Calvary Family Church.
+                            With gentle strength and unwavering faith, Carol has been a cornerstone of the ministry, providing a nurturing presence that reflects the love of Christ to all who come through the doors of Love of Calvary Family Church. She mentors young mothers, teaches Bible studies for women, and oversees the children's programs with joy and dedication.
                         </p>
+                        <div class="bg-pink-50 rounded-xl p-5 border border-pink-100 mt-4">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-quote-left text-pink-400 text-xl mt-1"></i>
+                                <p class="text-sm text-gray-700 italic">
+                                    “Every child is a gift from God. When we care for the fatherless and strengthen the hands of mothers, we are building the future of the Church in Africa.”
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-6 flex flex-wrap gap-4">
-                        <a href="index.html#partner" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2.5 px-6 rounded-lg transition">
-                            <i class="fas fa-hands-helping mr-2"></i>Support Her Work
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="index.html#partner" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2">
+                            <i class="fas fa-hands-helping"></i> Support Her Work
                         </a>
-                        <a href="mailto:kingdomfaithafrica@gmail.com" class="border border-pink-500 text-pink-600 hover:bg-pink-50 font-semibold py-2.5 px-6 rounded-lg transition">
-                            <i class="fas fa-envelope mr-2"></i>Send a Message
+                        <a href="mailto:kingdomfaithafrica@gmail.com" class="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2">
+                            <i class="fas fa-envelope"></i> Send Message
                         </a>
                     </div>
                 </div>
@@ -328,29 +405,29 @@
         </div>
     </section>
 
-    <!-- ======== TOGETHER SECTION ======== -->
+    <!-- ======== THEIR STORY — TOGETHER ======== -->
     <section class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-pink-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-lg border border-white/60">
                 <div class="flex justify-center mb-6">
                     <div class="bg-gradient-to-r from-blue-600 to-pink-500 p-4 rounded-full shadow-lg">
-                        <i class="fas fa-heart text-4xl text-white"></i>
+                        <i class="fas fa-ring text-3xl text-white"></i>
                     </div>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Together in Ministry &amp; Life</h2>
-                <p class="mt-4 text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
-                    Together, John and Carol live and minister from Kitengela, Kenya, with a vision to see healthy churches planted across Africa — from Kitengela to the nations.
+                <h2 class="text-2xl md:text-3xl font-extrabold text-center text-gray-900">Together in Ministry &amp; Life</h2>
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed text-center max-w-2xl mx-auto">
+                    John and Carol live and minister from Kitengela, Kenya, with a shared vision to see healthy churches planted across Africa — from Kitengela to the nations. Their partnership in marriage and ministry is a testimony of God's faithfulness.
                 </p>
-                <blockquote class="section-quote text-gray-700 text-lg mt-6 max-w-2xl mx-auto">
-                    “Two are better than one, because they have a good return for their labor.”<br />
-                    <span class="text-sm font-semibold text-blue-800">— Ecclesiastes 4:9</span>
+                <blockquote class="quote-accent text-gray-700 text-lg mt-6 max-w-2xl mx-auto">
+                    “Two are better than one, because they have a good return for their labor: If either of them falls down, one can help the other up.”<br />
+                    <span class="text-sm font-semibold text-blue-800 block mt-1">— Ecclesiastes 4:9-10</span>
                 </blockquote>
                 <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a href="index.html#home-church" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition btn-primary">
-                        <i class="fas fa-church mr-2"></i>Visit Love of Calvary
+                    <a href="index.html#home-church" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2 shadow-md hover:shadow-lg">
+                        <i class="fas fa-church"></i> Visit Love of Calvary
                     </a>
-                    <a href="index.html#partner" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition">
-                        <i class="fas fa-hand-holding-heart mr-2"></i>Partner With Us
+                    <a href="index.html#partner" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2 shadow-md hover:shadow-lg">
+                        <i class="fas fa-hand-holding-heart"></i> Partner With Us
                     </a>
                 </div>
             </div>
@@ -362,14 +439,14 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-extrabold">Join Us in Transforming Lives Across Africa</h2>
             <p class="mt-3 text-lg text-blue-100 max-w-2xl mx-auto">
-                Your partnership equips pastors, cares for children, and strengthens the local church. Every contribution brings hope and impact.
+                Your partnership equips pastors, cares for children, and strengthens the local church. Every contribution brings hope and lasting impact.
             </p>
             <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="index.html#partner" class="bg-white text-blue-700 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition">
-                    Give Today
+                <a href="index.html#partner" class="bg-white text-blue-700 hover:bg-gray-100 font-semibold py-3.5 px-10 rounded-xl transition shadow-lg hover:shadow-xl inline-flex items-center gap-2">
+                    <i class="fas fa-gift"></i> Give Today
                 </a>
-                <a href="index.html" class="border-2 border-white text-white hover:bg-white/10 font-semibold py-3 px-8 rounded-lg transition">
-                    Explore Our Work
+                <a href="index.html" class="border-2 border-white text-white hover:bg-white/10 font-semibold py-3.5 px-10 rounded-xl transition inline-flex items-center gap-2">
+                    <i class="fas fa-arrow-right"></i> Explore Our Work
                 </a>
             </div>
         </div>
@@ -397,10 +474,14 @@
         // Source code protection (best effort)
         document.addEventListener('contextmenu', e => e.preventDefault());
         document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault(); return false; }
-            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) { e.preventDefault(); return false; }
-            if (e.key === 'F12') { e.preventDefault(); return false; }
-            if (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) { e.preventDefault(); return false; }
+            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault();
+                return false; }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) { e.preventDefault();
+                return false; }
+            if (e.key === 'F12') { e.preventDefault();
+                return false; }
+            if (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) { e.preventDefault();
+                return false; }
         });
     </script>
 </body>
