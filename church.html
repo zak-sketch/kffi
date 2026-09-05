@@ -4,585 +4,1111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Founders | Kingdom Faith Ministry International</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com">
-    </script>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    />
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Hero with subtle gradient overlay */
+
+        /* Hero */
         .hero-founders {
-            background: linear-gradient(135deg, rgba(10, 30, 70, 0.85) 0%, rgba(20, 50, 100, 0.75) 100%), url('banner.jpg');
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(10, 30, 70, 0.88) 0%,
+                    rgba(20, 50, 100, 0.78) 100%
+                ),
+                url('banner.jpg');
             background-size: cover;
             background-position: center 30%;
         }
-        /* Smooth card hover with lift */
+
+        /* Cards */
         .card-lift {
-            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition:
+                transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.35s ease;
         }
+
         .card-lift:hover {
-            transform: translateY(-8px) scale(1.01);
-            box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.25);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.18);
         }
-        /* Image frame with subtle glow */
+
+        /* Images */
         .image-frame {
             position: relative;
             border-radius: 1.25rem;
             overflow: hidden;
-            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.15);
-            transition: box-shadow 0.4s ease;
+            box-shadow: 0 18px 40px -10px rgba(0, 0, 0, 0.14);
         }
-        .image-frame:hover {
-            box-shadow: 0 32px 64px -12px rgba(37, 99, 235, 0.20);
+
+        .image-frame img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            display: block;
         }
+
+        @media (max-width: 640px) {
+            .image-frame img {
+                height: 280px;
+            }
+        }
+
+        /* Subtle image overlay */
         .image-frame::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.15), transparent);
+            inset: auto 0 0 0;
+            height: 35%;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.14),
+                transparent
+            );
             pointer-events: none;
         }
-        /* Animated stat counters */
-        .stat-number {
-            font-variant-numeric: tabular-nums;
+
+        /* Decorative pattern */
+        .dot-pattern {
+            background-image: radial-gradient(
+                circle,
+                #dbeafe 1px,
+                transparent 1px
+            );
+            background-size: 24px 24px;
         }
-        /* Quote block with accent */
+
+        /* Quote */
         .quote-accent {
             border-left: 4px solid #2563eb;
-            padding-left: 1.5rem;
-            font-style: italic;
-            color: #1e293b;
+            padding-left: 1.25rem;
         }
-        /* Gradient text utility */
-        .text-gradient-blue {
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .text-gradient-pink {
-            background: linear-gradient(135deg, #be185d, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        /* Button pulse animation */
-        .btn-pulse {
-            animation: pulseGlow 2.5s infinite;
-        }
-        @keyframes pulseGlow {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 0 12px rgba(37, 99, 235, 0);
-            }
-        }
-        /* Fade-in on scroll (simple) */
+
+        /* Fade animation */
         .fade-up {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(24px);
             animation: fadeUp 0.8s ease forwards;
         }
+
         .fade-up-delay-1 {
-            animation-delay: 0.1s;
+            animation-delay: 0.12s;
         }
+
         .fade-up-delay-2 {
-            animation-delay: 0.25s;
+            animation-delay: 0.24s;
         }
+
         .fade-up-delay-3 {
-            animation-delay: 0.4s;
+            animation-delay: 0.36s;
         }
+
         @keyframes fadeUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        /* Mobile menu fix */
+
+        /* Respect reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            .fade-up {
+                opacity: 1;
+                transform: none;
+                animation: none;
+            }
+
+            .card-lift {
+                transition: none;
+            }
+        }
+
+        /* Mobile menu */
         .mobile-menu-open {
             display: flex !important;
         }
-        /* decorative dot pattern */
-        .dot-pattern {
-            background-image: radial-gradient(circle, #dbeafe 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        /* Gallery grid for founder images */
-        .founder-gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        @media (max-width: 640px) {
-            .founder-gallery {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-        }
-        .gallery-item .image-frame {
-            border-radius: 1.25rem;
-            overflow: hidden;
-            box-shadow: 0 20px 40px -8px rgba(0, 0, 0, 0.12);
-            transition: box-shadow 0.4s ease, transform 0.3s ease;
-        }
-        .gallery-item .image-frame:hover {
-            box-shadow: 0 32px 64px -12px rgba(37, 99, 235, 0.18);
-            transform: scale(1.01);
-        }
-        .gallery-item .image-frame img {
-            width: 100%;
-            height: 340px;
-            object-fit: cover;
-            display: block;
-        }
-        @media (max-width: 640px) {
-            .gallery-item .image-frame img {
-                height: 260px;
-            }
-        }
-        .gallery-caption {
-            text-align: center;
-            margin-top: 0.75rem;
-            font-size: 0.9rem;
-            color: #4b5563;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        .gallery-caption i {
-            color: #9ca3af;
-        }
-        .gallery-caption .badge {
-            display: inline-block;
-            font-size: 0.65rem;
-            font-weight: 700;
-            padding: 0.2rem 0.7rem;
-            border-radius: 9999px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-        .badge-blue {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        .badge-pink {
-            background: #fce7f3;
-            color: #be185d;
-        }
     </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 antialiased">
 
-    <!-- ======== FLOATING ACTION BUTTONS ======== -->
+    <!-- =========================================================
+         FLOATING CONTACT BUTTONS
+    ========================================================== -->
     <div class="fixed right-5 bottom-5 z-50 flex flex-col space-y-3">
-        <a href="tel:+254723781353" class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-transform hover:scale-110" title="Call us">
+
+        <a
+            href="tel:+254723781353"
+            class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shadow-lg hover:bg-blue-700 transition-transform hover:scale-110"
+            title="Call Kingdom Faith Ministry International"
+            aria-label="Call Kingdom Faith Ministry International"
+        >
             <i class="fas fa-phone-alt text-xl"></i>
         </a>
-        <a href="https://wa.me/254723781353" target="_blank" class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg hover:bg-green-600 transition-transform hover:scale-110" title="WhatsApp">
+
+        <a
+            href="https://wa.me/254723781353"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-12 h-12 rounded-full bg-green-500 text-white flex items-center justify-center shadow-lg hover:bg-green-600 transition-transform hover:scale-110"
+            title="Contact us on WhatsApp"
+            aria-label="Contact us on WhatsApp"
+        >
             <i class="fab fa-whatsapp text-xl"></i>
         </a>
-        <a href="https://facebook.com/kingdomfaithafrica" target="_blank" class="w-12 h-12 rounded-full bg-blue-800 text-white flex items-center justify-center shadow-lg hover:bg-blue-900 transition-transform hover:scale-110" title="Facebook">
+
+        <a
+            href="https://facebook.com/kingdomfaithafrica"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-12 h-12 rounded-full bg-blue-800 text-white flex items-center justify-center shadow-lg hover:bg-blue-900 transition-transform hover:scale-110"
+            title="Visit us on Facebook"
+            aria-label="Visit us on Facebook"
+        >
             <i class="fab fa-facebook-f text-xl"></i>
         </a>
+
     </div>
 
-    <!-- ======== HEADER / NAVBAR ======== -->
+
+    <!-- =========================================================
+         HEADER / NAVIGATION
+    ========================================================== -->
     <header class="bg-white shadow-md sticky top-0 z-40 border-b border-gray-100">
+
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center">
-                    <img src="logo.png" alt="KFFI Logo" class="h-14 w-auto mr-3" />
-                    <div>
-                        <h1 class="text-xl sm:text-2xl font-extrabold text-blue-900 leading-tight">Kingdom Faith Ministry International</h1>
-                        <p class="text-xs text-gray-600">Equipping Pastors • Caring for Orphans • Strengthening Churches</p>
+
+                <!-- Logo / Brand -->
+                <div class="flex items-center min-w-0">
+
+                    <img
+                        src="logo.png"
+                        alt="Kingdom Faith Ministry International logo"
+                        class="h-14 w-auto mr-3 flex-shrink-0"
+                    />
+
+                    <div class="min-w-0">
+                        <h1 class="text-lg sm:text-2xl font-extrabold text-blue-900 leading-tight">
+                            Kingdom Faith Ministry International
+                        </h1>
+
+                        <p class="text-xs text-gray-600 hidden sm:block">
+                            Equipping Pastors • Caring for Families • Strengthening Churches
+                        </p>
                     </div>
+
                 </div>
+
+
+                <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-6 font-medium text-gray-700">
-                    <a href="index.html" class="hover:text-blue-700">Home</a>
-                    <a href="index.html#who-we-are" class="hover:text-blue-700">Who We Are</a>
-                    <a href="index.html#pastor-training" class="hover:text-blue-700">Pastor Training</a>
-                    <a href="index.html#home-church" class="hover:text-blue-700">Love of Calvary</a>
-                    <a href="founders.html" class="text-blue-700 font-semibold border-b-2 border-blue-600 pb-0.5">Our Founders</a>
-                    <a href="index.html#partner" class="hover:text-blue-700">Partner</a>
+
+                    <a href="index.html" class="hover:text-blue-700 transition">
+                        Home
+                    </a>
+
+                    <a href="index.html#who-we-are" class="hover:text-blue-700 transition">
+                        Who We Are
+                    </a>
+
+                    <a href="index.html#pastor-training" class="hover:text-blue-700 transition">
+                        Pastor Training
+                    </a>
+
+                    <a href="index.html#home-church" class="hover:text-blue-700 transition">
+                        Love of Calvary
+                    </a>
+
+                    <a
+                        href="founders.html"
+                        class="text-blue-700 font-semibold border-b-2 border-blue-600 pb-0.5"
+                    >
+                        Our Founders
+                    </a>
+
+                    <a href="index.html#partner" class="hover:text-blue-700 transition">
+                        Partner
+                    </a>
+
                 </div>
+
+
+                <!-- Mobile Button -->
                 <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+
+                    <button
+                        id="mobile-menu-button"
+                        class="text-gray-600 hover:text-gray-900 focus:outline-none"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                        type="button"
+                    >
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
+
                 </div>
+
             </div>
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden pb-4 border-t border-gray-100 mt-2 pt-4">
+
+
+            <!-- Mobile Menu -->
+            <div
+                id="mobile-menu"
+                class="hidden md:hidden pb-5 border-t border-gray-100 mt-2 pt-4"
+            >
+
                 <div class="flex flex-col space-y-3 font-medium text-gray-700">
-                    <a href="index.html" class="hover:text-blue-700">Home</a>
-                    <a href="index.html#who-we-are" class="hover:text-blue-700">Who We Are</a>
-                    <a href="index.html#pastor-training" class="hover:text-blue-700">Pastor Training</a>
-                    <a href="index.html#home-church" class="hover:text-blue-700">Love of Calvary</a>
-                    <a href="founders.html" class="text-blue-700 font-semibold">Our Founders</a>
-                    <a href="index.html#partner" class="hover:text-blue-700">Partner</a>
+
+                    <a href="index.html" class="hover:text-blue-700">
+                        Home
+                    </a>
+
+                    <a href="index.html#who-we-are" class="hover:text-blue-700">
+                        Who We Are
+                    </a>
+
+                    <a href="index.html#pastor-training" class="hover:text-blue-700">
+                        Pastor Training
+                    </a>
+
+                    <a href="index.html#home-church" class="hover:text-blue-700">
+                        Love of Calvary
+                    </a>
+
+                    <a href="founders.html" class="text-blue-700 font-semibold">
+                        Our Founders
+                    </a>
+
+                    <a href="index.html#partner" class="hover:text-blue-700">
+                        Partner
+                    </a>
+
                 </div>
+
             </div>
+
         </nav>
+
     </header>
 
-    <!-- ======== HERO SECTION ======== -->
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
     <section class="hero-founders text-white py-20 md:py-28">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold tracking-wider uppercase mb-4 border border-white/30">
-                <i class="fas fa-crown mr-2 text-yellow-300"></i> Meet the Founders
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            <div
+                class="inline-flex items-center bg-white/15 backdrop-blur-sm px-5 py-2 rounded-full text-sm font-semibold tracking-wide mb-5 border border-white/25"
+            >
+                <i class="fas fa-users mr-2 text-blue-200"></i>
+                People Serving a Shared Mission
             </div>
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
-                Rev. John &amp; Carol Butalia
+
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-5">
+                The People Behind the Mission
             </h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto text-blue-100 font-light">
-                Together, building the Church across Africa — one pastor, one child, one family at a time.
+
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-blue-100 font-light leading-relaxed">
+                Kingdom Faith Ministry International is a community of believers,
+                pastors, families, churches, ministry workers, and partners serving
+                together to strengthen the Church and extend the love of Christ
+                across Africa.
             </p>
-            <div class="mt-6 flex justify-center gap-2">
+
+            <div class="mt-7 flex justify-center gap-2">
                 <span class="h-1 w-12 bg-blue-400 rounded-full"></span>
-                <span class="h-1 w-4 bg-pink-400 rounded-full"></span>
-                <span class="h-1 w-4 bg-blue-400 rounded-full"></span>
+                <span class="h-1 w-4 bg-white/70 rounded-full"></span>
+                <span class="h-1 w-12 bg-blue-400 rounded-full"></span>
             </div>
+
         </div>
+
     </section>
 
-    <!-- ======== FAMILY PORTRAIT GALLERY ======== -->
-    <!-- Shows BOTH fam.png (pastor & wife) AND fam2.png (wife only) -->
-    <section class="py-12 md:py-16 bg-white relative">
+
+    <!-- =========================================================
+         INTRODUCTION — COMMUNITY FIRST
+    ========================================================== -->
+    <section class="py-14 md:py-20 bg-white relative overflow-hidden">
+
         <div class="absolute inset-0 dot-pattern opacity-30 pointer-events-none"></div>
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-10">
-                <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">Our Founders in Focus</h2>
-                <p class="text-gray-500 mt-2">serving Christ and His Church across Africa</p>
-                <div class="flex justify-center gap-2 mt-3">
-                    <span class="h-0.5 w-8 bg-blue-500 rounded-full"></span>
-                    <span class="h-0.5 w-8 bg-pink-400 rounded-full"></span>
-                    <span class="h-0.5 w-8 bg-blue-500 rounded-full"></span>
-                </div>
-            </div>
 
-            <!-- 2-column gallery: fam.png (both) + fam2.png (wife only) -->
-            <div class="founder-gallery">
-                <!-- fam.png — Rev. John & Carol together -->
-                <div class="gallery-item fade-up">
-                    <div class="image-frame">
-                        <img src="fam.png" alt="Rev. John Amos Butalia and Carol June Butalia — Founders of Kingdom Faith Ministry International" />
-                    </div>
-                    <div class="gallery-caption">
-                        <i class="fas fa-users"></i>
-                        <span>Rev. John &amp; Carol Butalia</span>
-                        <span class="badge badge-blue">Founders</span>
-                    </div>
-                    <p class="text-center text-xs text-gray-400 mt-1">— Together in ministry &amp; life —</p>
-                </div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-                <!-- fam2.png — Carol June Butalia (wife only) -->
-                <div class="gallery-item fade-up fade-up-delay-1">
-                    <div class="image-frame">
-                        <img src="fam2.png" alt="Carol June Butalia — Co-Founder, Compassion Ministry Leader" />
-                    </div>
-                    <div class="gallery-caption">
-                        <i class="fas fa-female"></i>
-                        <span>Carol June Butalia</span>
-                        <span class="badge badge-pink">Co-Founder</span>
-                    </div>
-                    <p class="text-center text-xs text-gray-400 mt-1">— Compassion &amp; Family Ministry Leader —</p>
-                </div>
-            </div>
+            <div class="text-center max-w-3xl mx-auto fade-up">
 
-            <p class="text-center text-sm text-gray-400 mt-6 flex items-center justify-center gap-2">
-                <i class="fas fa-camera text-gray-300"></i>
-                Kitengela, Kenya &bull; Serving the nations
-            </p>
-        </div>
-    </section>
+                <span
+                    class="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold"
+                >
+                    <i class="fas fa-hands-helping mr-2"></i>
+                    A Shared Work
+                </span>
 
-    <!-- ======== REV. JOHN AMOS BUTALIA ======== -->
-    <section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
-                <!-- Bio (takes 3/5) -->
-                <div class="lg:col-span-3 fade-up">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-blue-100 text-blue-800 text-sm font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
-                            <i class="fas fa-user-tie"></i> Founder &amp; President
-                        </span>
-                        <span class="text-sm text-gray-400 flex items-center gap-1">
-                            <i class="fas fa-calendar-alt"></i> Since 2006
-                        </span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Rev. John Amos Butalia</h2>
-                    <p class="text-lg text-blue-600 font-medium mt-1">Equipping Pastors, Strengthening the African Church</p>
+                <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-gray-900">
+                    The Ministry Is Bigger Than Any One Person
+                </h2>
 
-                    <div class="mt-6 space-y-4 text-gray-700 leading-relaxed">
-                        <p>
-                            <span class="font-semibold text-blue-800">Rev. John Amos Butalia</span> has served in Gospel ministry for over two decades with a singular burden: to strengthen the African church by equipping its pastors. He is the founder of <span class="font-semibold">Kingdom Faith Ministry International</span>, a movement that has trained pastors and Gospel ministers in <strong>17 African nations</strong>.
-                        </p>
-                        <p>
-                            Rev. John observed that many pastors preach with passion but lack the tools to disciple effectively, often unable to afford formal Bible training. KFFI was born to fill that gap. His teaching focuses on grounding ministers in their calling: how to hear the voice of God, minister in power through the nine manifestations of the Holy Spirit, understand <strong>eschatology: the coming of the Son of Man</strong>, and build strong marriages and families for ministry.
-                        </p>
-                        <p>
-                            For years, the work was itinerant — traveling by road and air to reach remote villages. Today, the Lord has established <span class="font-semibold">Love of Calvary Family Church, Kitengela</span>, as KFFI's home base — a model church and residential training center that hosts pastors from many nations for intensive equipping.
-                        </p>
-                        <div class="bg-blue-50 rounded-xl p-5 border border-blue-100 mt-4">
-                            <div class="flex items-start gap-3">
-                                <i class="fas fa-quote-left text-blue-400 text-xl mt-1"></i>
-                                <p class="text-sm text-gray-700 italic">
-                                    “I believe the greatest need in Africa is not more churches, but <strong>well-equipped pastors</strong> who can lead with integrity, power, and love. When the shepherd is strengthened, the flock thrives.”
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="index.html#partner" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition btn-pulse inline-flex items-center gap-2">
-                            <i class="fas fa-hands-helping"></i> Support His Work
-                        </a>
-                        <a href="mailto:kingdomfaithafrica@gmail.com" class="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2">
-                            <i class="fas fa-envelope"></i> Send Message
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Stats (takes 2/5) -->
-                <div class="lg:col-span-2 space-y-4 fade-up fade-up-delay-1">
-                    <div class="bg-white rounded-2xl p-6 shadow-sm card-lift border border-gray-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-blue-100 p-3.5 rounded-full">
-                                <i class="fas fa-globe-africa text-2xl text-blue-600"></i>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-extrabold text-blue-600 stat-number">17</p>
-                                <p class="text-sm text-gray-500 font-medium">Nations Reached</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-sm card-lift border border-gray-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-emerald-100 p-3.5 rounded-full">
-                                <i class="fas fa-users text-2xl text-emerald-600"></i>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-extrabold text-emerald-600 stat-number">176,800<span class="text-lg">+</span></p>
-                                <p class="text-sm text-gray-500 font-medium">Pastors Trained</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-sm card-lift border border-gray-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-purple-100 p-3.5 rounded-full">
-                                <i class="fas fa-calendar-alt text-2xl text-purple-600"></i>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-extrabold text-purple-600 stat-number">20<span class="text-lg">+</span></p>
-                                <p class="text-sm text-gray-500 font-medium">Years in Ministry</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white rounded-2xl p-6 shadow-sm card-lift border border-gray-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-orange-100 p-3.5 rounded-full">
-                                <i class="fas fa-church text-2xl text-orange-500"></i>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-extrabold text-orange-500 stat-number">1</p>
-                                <p class="text-sm text-gray-500 font-medium">Home Church — LCF Kitengela</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== CAROL JUNE BUTALIA ======== -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
-                <!-- Quick Stats (takes 2/5, left on large) -->
-                <div class="lg:col-span-2 space-y-4 order-2 lg:order-1 fade-up fade-up-delay-2">
-                    <div class="bg-pink-50 rounded-2xl p-6 shadow-sm card-lift border border-pink-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3.5 rounded-full">
-                                <i class="fas fa-heart text-2xl text-pink-500"></i>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-extrabold text-pink-500 stat-number">350<span class="text-lg">+</span></p>
-                                <p class="text-sm text-gray-500 font-medium">Orphans &amp; Vulnerable Children Cared For</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-pink-50 rounded-2xl p-6 shadow-sm card-lift border border-pink-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3.5 rounded-full">
-                                <i class="fas fa-female text-2xl text-pink-500"></i>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-extrabold text-pink-500 stat-number">100<span class="text-lg">+</span></p>
-                                <p class="text-sm text-gray-500 font-medium">Women &amp; Pastors' Wives Mentored</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-pink-50 rounded-2xl p-6 shadow-sm card-lift border border-pink-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3.5 rounded-full">
-                                <i class="fas fa-child text-2xl text-pink-500"></i>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-extrabold text-pink-500 stat-number">3</p>
-                                <p class="text-sm text-gray-500 font-medium">Compassion Programs</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-pink-50 rounded-2xl p-6 shadow-sm card-lift border border-pink-100">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-pink-100 p-3.5 rounded-full">
-                                <i class="fas fa-hands-helping text-2xl text-pink-500"></i>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-extrabold text-pink-500 stat-number">15<span class="text-lg">+</span></p>
-                                <p class="text-sm text-gray-500 font-medium">Years in Compassion Ministry</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bio (takes 3/5, right on large) -->
-                <div class="lg:col-span-3 order-1 lg:order-2 fade-up fade-up-delay-1">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-pink-100 text-pink-800 text-sm font-bold px-4 py-1.5 rounded-full flex items-center gap-1.5">
-                            <i class="fas fa-heart"></i> Co-Founder
-                        </span>
-                        <span class="text-sm text-gray-400 flex items-center gap-1">
-                            <i class="fas fa-calendar-alt"></i> Since 2006
-                        </span>
-                    </div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Carol June Butalia</h2>
-                    <p class="text-lg text-pink-600 font-medium mt-1">Compassion &amp; Family Ministry Leader</p>
-
-                    <div class="mt-6 space-y-4 text-gray-700 leading-relaxed">
-                        <p>
-                            <span class="font-semibold text-pink-700">Carol June Butalia</span> is the devoted wife of Rev. John and Co-Founder of Kingdom Faith Ministry International. She is the heart behind KFFI's compassion work among orphans and vulnerable children, extending the love of Calvary to widows and young families in need.
-                        </p>
-                        <p>
-                            Carol leads ministry to women, pastors' wives, and children, ensuring that as pastors are trained in truth, families are strengthened in love. Her heart for the vulnerable has shaped KFFI's holistic approach — caring for the whole person: body, mind, and spirit.
-                        </p>
-                        <p>
-                            With gentle strength and unwavering faith, Carol has been a cornerstone of the ministry, providing a nurturing presence that reflects the love of Christ to all who come through the doors of Love of Calvary Family Church. She mentors young mothers, teaches Bible studies for women, and oversees the children's programs with joy and dedication.
-                        </p>
-                        <div class="bg-pink-50 rounded-xl p-5 border border-pink-100 mt-4">
-                            <div class="flex items-start gap-3">
-                                <i class="fas fa-quote-left text-pink-400 text-xl mt-1"></i>
-                                <p class="text-sm text-gray-700 italic">
-                                    “Every child is a gift from God. When we care for the fatherless and strengthen the hands of mothers, we are building the future of the Church in Africa.”
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="index.html#partner" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2">
-                            <i class="fas fa-hands-helping"></i> Support Her Work
-                        </a>
-                        <a href="mailto:kingdomfaithafrica@gmail.com" class="border-2 border-pink-500 text-pink-600 hover:bg-pink-50 font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2">
-                            <i class="fas fa-envelope"></i> Send Message
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== THEIR STORY — TOGETHER ======== -->
-    <section class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-pink-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-lg border border-white/60">
-                <div class="flex justify-center mb-6">
-                    <div class="bg-gradient-to-r from-blue-600 to-pink-500 p-4 rounded-full shadow-lg">
-                        <i class="fas fa-ring text-3xl text-white"></i>
-                    </div>
-                </div>
-                <h2 class="text-2xl md:text-3xl font-extrabold text-center text-gray-900">Together in Ministry &amp; Life</h2>
-                <p class="mt-4 text-lg text-gray-700 leading-relaxed text-center max-w-2xl mx-auto">
-                    John and Carol live and minister from Kitengela, Kenya, with a shared vision to see healthy churches planted across Africa — from Kitengela to the nations. Their partnership in marriage and ministry is a testimony of God's faithfulness.
+                <p class="mt-5 text-lg text-gray-600 leading-relaxed">
+                    Every part of this work is strengthened by people serving
+                    alongside one another. Pastors encourage pastors. Churches
+                    support churches. Families care for families. Ministry workers
+                    share their gifts, and partners help create opportunities for
+                    others to grow.
                 </p>
-                <blockquote class="quote-accent text-gray-700 text-lg mt-6 max-w-2xl mx-auto">
-                    “Two are better than one, because they have a good return for their labor: If either of them falls down, one can help the other up.”<br />
-                    <span class="text-sm font-semibold text-blue-800 block mt-1">— Ecclesiastes 4:9-10</span>
-                </blockquote>
-                <div class="mt-8 flex flex-wrap justify-center gap-4">
-                    <a href="index.html#home-church" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2 shadow-md hover:shadow-lg">
-                        <i class="fas fa-church"></i> Visit Love of Calvary
-                    </a>
-                    <a href="index.html#partner" class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-xl transition inline-flex items-center gap-2 shadow-md hover:shadow-lg">
-                        <i class="fas fa-hand-holding-heart"></i> Partner With Us
-                    </a>
+
+                <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                    Rev. John Amos Butalia and Carol June Butalia helped establish
+                    this ministry and continue to serve within it. Their role is
+                    not separate from the community, but part of a wider work in
+                    which many people contribute, learn, serve, and grow together.
+                </p>
+
+            </div>
+
+
+            <!-- Community cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12">
+
+                <div class="bg-blue-50 rounded-2xl p-6 border border-blue-100 card-lift fade-up">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-4">
+                        <i class="fas fa-user-friends text-xl"></i>
+                    </div>
+
+                    <h3 class="font-bold text-gray-900">
+                        Pastors
+                    </h3>
+
+                    <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                        Learning, encouraging one another, and strengthening
+                        local ministry.
+                    </p>
                 </div>
+
+
+                <div class="bg-emerald-50 rounded-2xl p-6 border border-emerald-100 card-lift fade-up fade-up-delay-1">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center mb-4">
+                        <i class="fas fa-church text-xl"></i>
+                    </div>
+
+                    <h3 class="font-bold text-gray-900">
+                        Churches
+                    </h3>
+
+                    <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                        Growing stronger through fellowship, teaching, and
+                        shared service.
+                    </p>
+                </div>
+
+
+                <div class="bg-amber-50 rounded-2xl p-6 border border-amber-100 card-lift fade-up fade-up-delay-2">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center mb-4">
+                        <i class="fas fa-home text-xl"></i>
+                    </div>
+
+                    <h3 class="font-bold text-gray-900">
+                        Families
+                    </h3>
+
+                    <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                        Finding encouragement, practical care, and a place
+                        to belong.
+                    </p>
+                </div>
+
+
+                <div class="bg-purple-50 rounded-2xl p-6 border border-purple-100 card-lift fade-up fade-up-delay-3">
+                    <div class="w-12 h-12 rounded-xl bg-purple-600 text-white flex items-center justify-center mb-4">
+                        <i class="fas fa-hands-helping text-xl"></i>
+                    </div>
+
+                    <h3 class="font-bold text-gray-900">
+                        Partners
+                    </h3>
+
+                    <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                        Sharing time, prayer, resources, and skills to strengthen
+                        the wider mission.
+                    </p>
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- ======== CALL TO ACTION ======== -->
+
+    <!-- =========================================================
+         FOUNDERS' PHOTOS
+    ========================================================== -->
+    <section class="py-14 md:py-20 bg-gray-50">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-10 fade-up">
+
+                <span class="text-sm font-bold tracking-wider uppercase text-blue-600">
+                    Serving Within the Community
+                </span>
+
+                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-gray-900">
+                    Rev. John &amp; Carol Butalia
+                </h2>
+
+                <p class="mt-3 text-gray-500 max-w-2xl mx-auto">
+                    The founders of Kingdom Faith Ministry International,
+                    serving alongside pastors, families, churches, and ministry
+                    partners.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- John & Carol -->
+                <div class="fade-up">
+
+                    <div class="image-frame">
+                        <img
+                            src="fam.png"
+                            alt="Rev. John Amos Butalia and Carol June Butalia serving in ministry"
+                        />
+                    </div>
+
+                    <div class="mt-5 text-center">
+
+                        <h3 class="text-xl font-bold text-gray-900">
+                            Rev. John Amos &amp; Carol June Butalia
+                        </h3>
+
+                        <p class="text-sm text-blue-600 font-semibold mt-1">
+                            Founding Servants
+                        </p>
+
+                        <p class="text-sm text-gray-500 mt-2">
+                            Serving the wider ministry community from Kitengela, Kenya
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Carol -->
+                <div class="fade-up fade-up-delay-1">
+
+                    <div class="image-frame">
+                        <img
+                            src="fam2.png"
+                            alt="Carol June Butalia serving the ministry community"
+                        />
+                    </div>
+
+                    <div class="mt-5 text-center">
+
+                        <h3 class="text-xl font-bold text-gray-900">
+                            Carol June Butalia
+                        </h3>
+
+                        <p class="text-sm text-blue-600 font-semibold mt-1">
+                            Founding Servant &amp; Ministry Worker
+                        </p>
+
+                        <p class="text-sm text-gray-500 mt-2">
+                            Serving families, women, children, and the wider church community
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         REV. JOHN
+    ========================================================== -->
+    <section class="py-16 md:py-24 bg-white">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
+
+                <!-- Role card -->
+                <div class="lg:col-span-1 fade-up">
+
+                    <div class="bg-blue-50 rounded-3xl p-7 border border-blue-100">
+
+                        <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center">
+                            <i class="fas fa-book-open text-2xl"></i>
+                        </div>
+
+                        <p class="mt-5 text-xs uppercase tracking-wider font-bold text-blue-600">
+                            Serving Since 2006
+                        </p>
+
+                        <h3 class="mt-2 text-xl font-extrabold text-gray-900">
+                            A Calling to Equip
+                        </h3>
+
+                        <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+                            Rev. John serves within the ministry by teaching,
+                            equipping, encouraging, and helping create spaces
+                            where pastors and churches can grow.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Biography -->
+                <div class="lg:col-span-2 fade-up fade-up-delay-1">
+
+                    <p class="text-sm font-bold uppercase tracking-wider text-blue-600">
+                        Rev. John Amos Butalia
+                    </p>
+
+                    <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-gray-900">
+                        Equipping People for Ministry
+                    </h2>
+
+                    <div class="mt-6 space-y-5 text-gray-700 leading-relaxed">
+
+                        <p>
+                            Rev. John Amos Butalia has served in Gospel ministry
+                            for more than two decades. His ministry has been
+                            shaped by a desire to see pastors and Gospel workers
+                            strengthened in their calling and better equipped to
+                            serve the people entrusted to them.
+                        </p>
+
+                        <p>
+                            Through Kingdom Faith Ministry International,
+                            teaching and ministry opportunities are made available
+                            to pastors and ministry workers from different
+                            communities and nations. The emphasis is on practical
+                            biblical teaching, spiritual growth, responsible
+                            leadership, and strengthening the local church.
+                        </p>
+
+                        <p>
+                            The ministry has included teaching on hearing and
+                            following God's leading, the manifestations of the
+                            Holy Spirit, biblical understanding of the coming of
+                            the Son of Man, and the importance of healthy
+                            relationships and families within ministry.
+                        </p>
+
+                        <p>
+                            What began as an itinerant work has grown into a wider
+                            network of relationships and ministry opportunities.
+                            Love of Calvary Family Church in Kitengela provides a
+                            local setting from which people can gather, worship,
+                            learn, serve, and encourage one another.
+                        </p>
+
+                    </div>
+
+
+                    <div class="quote-accent mt-8">
+
+                        <p class="text-lg text-gray-700 italic leading-relaxed">
+                            “When the shepherd is strengthened, the flock is
+                            strengthened.”
+                        </p>
+
+                        <p class="text-sm text-blue-700 font-semibold mt-2">
+                            — Rev. John Amos Butalia
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CAROL
+    ========================================================== -->
+    <section class="py-16 md:py-24 bg-gray-50">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-14 items-start">
+
+                <!-- Biography -->
+                <div class="lg:col-span-2 order-2 lg:order-1 fade-up">
+
+                    <p class="text-sm font-bold uppercase tracking-wider text-pink-600">
+                        Carol June Butalia
+                    </p>
+
+                    <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-gray-900">
+                        Serving Families and the Wider Community
+                    </h2>
+
+                    <div class="mt-6 space-y-5 text-gray-700 leading-relaxed">
+
+                        <p>
+                            Carol June Butalia is one of the founding servants of
+                            Kingdom Faith Ministry International. Her ministry
+                            has included caring for families, encouraging women,
+                            supporting pastors' families, and helping create an
+                            environment where children and adults can experience
+                            Christian care and belonging.
+                        </p>
+
+                        <p>
+                            Her service reflects the ministry's wider commitment
+                            to care for people as a whole. Spiritual teaching is
+                            accompanied by practical concern for families,
+                            children, relationships, and the everyday needs of
+                            people within the community.
+                        </p>
+
+                        <p>
+                            Through relationships with women, families, children,
+                            and ministry workers, Carol contributes to a culture
+                            of encouragement and mutual care. The work is not
+                            about one individual providing everything; it is about
+                            people using their gifts and responsibilities to
+                            strengthen one another.
+                        </p>
+
+                        <p>
+                            This same spirit extends to Love of Calvary Family
+                            Church, where worship, Bible teaching, fellowship,
+                            prayer, and service bring people together as one
+                            community.
+                        </p>
+
+                    </div>
+
+
+                    <div class="quote-accent mt-8" style="border-left-color:#ec4899;">
+
+                        <p class="text-lg text-gray-700 italic leading-relaxed">
+                            “When we strengthen families and care for one another,
+                            we strengthen the community around us.”
+                        </p>
+
+                        <p class="text-sm text-pink-700 font-semibold mt-2">
+                            — Carol June Butalia
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Role card -->
+                <div class="lg:col-span-1 order-1 lg:order-2 fade-up fade-up-delay-1">
+
+                    <div class="bg-pink-50 rounded-3xl p-7 border border-pink-100">
+
+                        <div class="w-14 h-14 rounded-2xl bg-pink-500 text-white flex items-center justify-center">
+                            <i class="fas fa-heart text-2xl"></i>
+                        </div>
+
+                        <p class="mt-5 text-xs uppercase tracking-wider font-bold text-pink-600">
+                            Serving Since 2006
+                        </p>
+
+                        <h3 class="mt-2 text-xl font-extrabold text-gray-900">
+                            A Calling to Care
+                        </h3>
+
+                        <p class="mt-3 text-sm text-gray-600 leading-relaxed">
+                            Carol serves alongside others to encourage families,
+                            women, children, and ministry workers within the
+                            wider church community.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         HOW THE COMMUNITY WORKS
+    ========================================================== -->
+    <section class="py-16 md:py-24 bg-white">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto fade-up">
+
+                <span
+                    class="inline-flex items-center bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-semibold"
+                >
+                    <i class="fas fa-network-wired mr-2"></i>
+                    Growing Together
+                </span>
+
+                <h2 class="mt-5 text-3xl md:text-4xl font-extrabold text-gray-900">
+                    Everyone Has a Place in the Work
+                </h2>
+
+                <p class="mt-4 text-lg text-gray-600 leading-relaxed">
+                    The strength of the ministry comes from participation.
+                    People are not simply recipients or providers; they are
+                    part of a community where gifts, experience, prayer,
+                    encouragement, knowledge, and practical help can be shared.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+
+                <!-- Learn -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift fade-up">
+
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-xl"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-xl font-bold text-gray-900">
+                        Learn
+                    </h3>
+
+                    <p class="mt-3 text-gray-600 leading-relaxed">
+                        Pastors, ministry workers, families, and church members
+                        have opportunities to learn through teaching, fellowship,
+                        mentoring, and shared experience.
+                    </p>
+
+                </div>
+
+
+                <!-- Serve -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift fade-up fade-up-delay-1">
+
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-xl"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-xl font-bold text-gray-900">
+                        Serve
+                    </h3>
+
+                    <p class="mt-3 text-gray-600 leading-relaxed">
+                        People contribute according to their gifts and
+                        opportunities, helping strengthen churches, families,
+                        children, and ministry relationships.
+                    </p>
+
+                </div>
+
+
+                <!-- Grow -->
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift fade-up fade-up-delay-2">
+
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center">
+                        <i class="fas fa-seedling text-xl"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-xl font-bold text-gray-900">
+                        Grow
+                    </h3>
+
+                    <p class="mt-3 text-gray-600 leading-relaxed">
+                        As people grow in faith, knowledge, relationships, and
+                        service, that growth becomes a blessing to others and to
+                        the churches and communities around them.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         COMMUNITY STATEMENT
+    ========================================================== -->
+    <section class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-gray-50">
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100 text-center fade-up">
+
+                <div class="w-16 h-16 mx-auto rounded-2xl bg-blue-600 text-white flex items-center justify-center shadow-md">
+                    <i class="fas fa-people-arrows text-2xl"></i>
+                </div>
+
+                <h2 class="mt-6 text-2xl md:text-3xl font-extrabold text-gray-900">
+                    A Community of Mutual Strength
+                </h2>
+
+                <p class="mt-5 text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                    We believe ministry is strongest when people walk together.
+                    Those who teach also continue to learn. Those who receive
+                    encouragement can encourage others. Those who have resources
+                    can share, while those with time, experience, prayer, skills,
+                    or practical help can contribute in meaningful ways.
+                </p>
+
+                <p class="mt-4 text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                    In this way, the work of Kingdom Faith Ministry International
+                    belongs to the wider community it serves. The goal is not to
+                    create dependence on individuals, but to see people and
+                    churches strengthened so that they can strengthen others.
+                </p>
+
+                <div class="quote-accent text-left mt-8 max-w-2xl mx-auto">
+
+                    <p class="text-gray-700 italic text-lg leading-relaxed">
+                        “As each part does its work, the whole body grows and
+                        builds itself up in love.”
+                    </p>
+
+                    <p class="text-sm font-semibold text-blue-700 mt-2">
+                        — Ephesians 4:16
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         LOVE OF CALVARY / HOME BASE
+    ========================================================== -->
+    <section class="py-16 md:py-20 bg-white">
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                <div class="fade-up">
+
+                    <span class="text-sm font-bold uppercase tracking-wider text-blue-600">
+                        A Place to Gather
+                    </span>
+
+                    <h2 class="mt-2 text-3xl md:text-4xl font-extrabold text-gray-900">
+                        Love of Calvary Family Church
+                    </h2>
+
+                    <p class="mt-5 text-gray-600 leading-relaxed">
+                        In Kitengela, Kenya, Love of Calvary Family Church
+                        provides a local setting for worship, teaching,
+                        fellowship, prayer, training, and service.
+                    </p>
+
+                    <p class="mt-4 text-gray-600 leading-relaxed">
+                        It is part of the wider ministry story — a place where
+                        people can come together, build relationships, receive
+                        encouragement, and contribute to the life of the church.
+                    </p>
+
+                    <a
+                        href="index.html#home-church"
+                        class="mt-7 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-7 rounded-xl transition shadow-md"
+                    >
+                        <i class="fas fa-church"></i>
+                        Learn About the Church
+                    </a>
+
+                </div>
+
+
+                <div class="bg-blue-900 rounded-3xl p-8 text-white fade-up fade-up-delay-1">
+
+                    <div class="w-14 h-14 rounded-2xl bg-white/15 flex items-center justify-center">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+
+                    <h3 class="mt-6 text-2xl font-bold">
+                        Kitengela, Kenya
+                    </h3>
+
+                    <p class="mt-3 text-blue-100 leading-relaxed">
+                        A local home for a wider community connected through
+                        faith, ministry, teaching, fellowship, and service.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-2">
+
+                        <span class="bg-white/10 border border-white/10 px-3 py-1.5 rounded-full text-sm">
+                            Worship
+                        </span>
+
+                        <span class="bg-white/10 border border-white/10 px-3 py-1.5 rounded-full text-sm">
+                            Training
+                        </span>
+
+                        <span class="bg-white/10 border border-white/10 px-3 py-1.5 rounded-full text-sm">
+                            Fellowship
+                        </span>
+
+                        <span class="bg-white/10 border border-white/10 px-3 py-1.5 rounded-full text-sm">
+                            Service
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CALL TO ACTION
+    ========================================================== -->
     <section class="py-16 md:py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
+
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-extrabold">Join Us in Transforming Lives Across Africa</h2>
-            <p class="mt-3 text-lg text-blue-100 max-w-2xl mx-auto">
-                Your partnership equips pastors, cares for children, and strengthens the local church. Every contribution brings hope and lasting impact.
+
+            <span class="inline-flex items-center bg-white/10 border border-white/15 px-4 py-2 rounded-full text-sm font-semibold">
+                <i class="fas fa-users mr-2"></i>
+                You Are Welcome Here
+            </span>
+
+            <h2 class="mt-5 text-3xl md:text-4xl font-extrabold">
+                Be Part of the Community
+            </h2>
+
+            <p class="mt-4 text-lg text-blue-100 max-w-2xl mx-auto leading-relaxed">
+                Whether through prayer, learning, serving, giving, encouraging,
+                or simply walking alongside others, every meaningful contribution
+                can help strengthen the Church and the people within it.
             </p>
+
             <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-                <a href="index.html#partner" class="bg-white text-blue-700 hover:bg-gray-100 font-semibold py-3.5 px-10 rounded-xl transition shadow-lg hover:shadow-xl inline-flex items-center gap-2">
-                    <i class="fas fa-gift"></i> Give Today
+
+                <a
+                    href="index.html#partner"
+                    class="bg-white text-blue-700 hover:bg-gray-100 font-semibold py-3.5 px-9 rounded-xl transition shadow-lg inline-flex items-center justify-center gap-2"
+                >
+                    <i class="fas fa-hands-helping"></i>
+                    Join the Work
                 </a>
-                <a href="index.html" class="border-2 border-white text-white hover:bg-white/10 font-semibold py-3.5 px-10 rounded-xl transition inline-flex items-center gap-2">
-                    <i class="fas fa-arrow-right"></i> Explore Our Work
+
+                <a
+                    href="mailto:kingdomfaithafrica@gmail.com"
+                    class="border-2 border-white text-white hover:bg-white/10 font-semibold py-3.5 px-9 rounded-xl transition inline-flex items-center justify-center gap-2"
+                >
+                    <i class="fas fa-envelope"></i>
+                    Get in Touch
                 </a>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- ======== FOOTER ======== -->
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
     <footer class="bg-gray-900 text-white py-8">
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm">&copy; 2026 Kingdom Faith Ministry International • Registered Nonprofit • <a href="#" class="hover:underline">Privacy Policy</a></p>
-            <p class="text-xs mt-2 text-gray-400">Serving more than All African Nations</p>
+
+            <p class="text-sm">
+                &copy; 2026 Kingdom Faith Ministry International
+                • Registered Nonprofit
+                • <a href="#" class="hover:underline">Privacy Policy</a>
+            </p>
+
+            <p class="text-xs mt-2 text-gray-400">
+                Serving communities, churches, families, and ministry leaders across Africa
+            </p>
+
         </div>
+
     </footer>
 
-    <!-- ======== SCRIPTS ======== -->
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
     <script>
-        // Mobile menu toggle
+
+        /* Mobile menu */
         const menuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+
         if (menuButton && mobileMenu) {
+
             menuButton.addEventListener('click', () => {
+
+                const isHidden = mobileMenu.classList.contains('hidden');
+
                 mobileMenu.classList.toggle('hidden');
+
+                menuButton.setAttribute(
+                    'aria-expanded',
+                    isHidden ? 'true' : 'false'
+                );
+
             });
+
         }
 
-        // Source code protection (best effort)
-        document.addEventListener('contextmenu', e => e.preventDefault());
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) { e.preventDefault();
-                return false; }
-            if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) { e.preventDefault();
-                return false; }
-            if (e.key === 'F12') { e.preventDefault();
-                return false; }
-            if (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) { e.preventDefault();
-                return false; }
-        });
+
+        /*
+         * Note:
+         * Browser-side source-code blocking was intentionally removed.
+         * Disabling right-click, F12, or developer tools does not provide
+         * meaningful protection for a public website and can make the site
+         * less accessible and less user-friendly.
+         */
+
     </script>
+
 </body>
 </html>
